@@ -4,9 +4,24 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article';
+  published?: Date;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown>[];
 }
 
-const { title, description = 'dr Marta Kryczka – lekarz dentysta, medycyna estetyczna i ortodoncja. Wrocław.' } = Astro.props;
+const {
+  title,
+  description = 'dr Marta Kryczka – lekarz dentysta, medycyna estetyczna i ortodoncja. Wrocław.',
+  image = '/img/og.webp',
+  imageAlt = 'dr Marta Kryczka – medycyna estetyczna i ortodoncja',
+  type = 'website',
+  published,
+  noindex = false,
+  jsonLd = [],
+} = Astro.props;
 const path = Astro.url.pathname;
 const nav = [
   { href: '/o-mnie/', label: 'O mnie' },
@@ -15,6 +30,30 @@ const nav = [
   { href: '/aktualnosci/', label: 'Aktualności' },
   { href: '/artykuly/', label: 'Artykuły' },
 ];
+const canonical = new URL(path, Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
+const site = Astro.site!.href.replace(/\/$/, '');
+const person = {
+  '@type': 'Person',
+  '@id': `${site}/#person`,
+  name: 'dr Marta Kryczka',
+  honorificPrefix: 'dr',
+  jobTitle: 'Lekarz dentysta',
+  description: 'Lekarz dentysta łączący ortodoncję i medycynę estetyczną. Edukator lekarzy.',
+  url: `${site}/`,
+  image: `${site}/img/dr-marta-kryczka-lekarz-dentysta-wroclaw.webp`,
+  sameAs: ['https://www.instagram.com/drmartakryczka/'],
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'Uniwersytet Medyczny we Wrocławiu' },
+    { '@type': 'CollegeOrUniversity', name: 'Danube Private University' },
+  ],
+  knowsAbout: ['medycyna estetyczna', 'ortodoncja', 'Invisalign', 'biostymulacja', 'laseroterapia', 'toksyna botulinowa', 'wypełniacze'],
+};
+const baseLd = [
+  { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${site}/#website`, url: `${site}/`, name: 'dr Marta Kryczka', inLanguage: 'pl-PL', publisher: { '@id': `${site}/#person` } },
+  { '@context': 'https://schema.org', ...person },
+];
+const graph = [...baseLd, ...jsonLd.map((j) => ({ '@context': 'https://schema.org', ...j }))];
 const fullTitle = path === '/' ? title : `${title} | dr Marta Kryczka`;
 ---
 
@@ -28,11 +67,23 @@ const fullTitle = path === '/' ? title : `${title} | dr Marta Kryczka`;
     <link rel="icon" type="image/png" href="/img/dr-marta-kryczka-ikona.png" sizes="512x512" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(path, Astro.site)} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="dr Marta Kryczka" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:locale" content="pl_PL" />
-    <meta property="og:image" content={new URL('/img/og.webp', Astro.site)} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={imageAlt} />
+    {published && <meta property="article:published_time" content={published.toISOString()} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {graph.map((g) => <script type="application/ld+json" set:html={JSON.stringify(g)} />)}
   </head>
   <body>
     <header class="site-header">
