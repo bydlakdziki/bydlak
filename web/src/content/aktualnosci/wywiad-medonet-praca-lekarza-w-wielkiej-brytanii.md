@@ -5,6 +5,8 @@ date: 2026-09-02
 type: 'W mediach'
 location: 'Medonet.pl'
 link: 'https://www.medonet.pl/zdrowie/polka-jest-lekarka-w-wielkiej-brytanii-moge-utrzymac-dom-i-rodzine-pracujac-18-godzin-tygodniowo/emq44n2'
+image: '/img/aktualnosci/wywiad-medonet-dr-marta-kryczka-w-mediach.webp'
+imageAlt: 'Wywiad z dr Martą Kryczką w Medonet.pl'
 draft: false
 ---
 

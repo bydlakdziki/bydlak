@@ -5,6 +5,8 @@ date: 2026-09-07
 type: 'W mediach'
 location: 'TikTok, StomatoLogicznie'
 link: 'https://www.tiktok.com/@stomatologicznie/video/7682694917025434913'
+image: '/img/aktualnosci/film-tiktok-mity-ortodoncja-dr-marta-kryczka-w-mediach.webp'
+imageAlt: 'Film z dr Martą Kryczką o mitach w ortodoncji'
 draft: false
 ---
 
