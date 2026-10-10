@@ -28,7 +28,7 @@ const sections = [
           <a class="btn ghost" href="/artykuly/">Czytaj artykuły</a>
         </div>
       </div>
-      <div class="portrait" role="img" aria-label="Miejsce na portret dr Marty Kryczki">Miejsce na portret dr Marty Kryczki</div>
+      <img class="portrait" src="/hero.svg" alt="" width="800" height="1000" />
     </div>
   </section>
 
@@ -37,6 +37,7 @@ const sections = [
       <div class="grid">
         {sections.map((s) => (
           <div class="card">
+            <img class="card-img" src="/karta.svg" alt="" width="400" height="240" loading="lazy" />
             <h3>{s.title}</h3>
             <p>{s.text}</p>
             <a class="more" href={s.href}>Przejdź →</a>

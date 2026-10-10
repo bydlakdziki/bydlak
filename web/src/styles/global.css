@@ -66,6 +66,16 @@ nav a:hover, nav a[aria-current='page'] { color: var(--accent); }
   display: grid; place-items: center;
   color: var(--accent-dark); font-size: .9rem; text-align: center; padding: 1rem;
 }
+img.portrait { width: 100%; height: auto; object-fit: cover; display: block; }
+.card-img {
+  width: calc(100% + 3rem); margin: -1.5rem -1.5rem 1.2rem;
+  height: 130px; object-fit: cover; display: block;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.page-head {
+  background: url('/karta.svg') center / cover no-repeat;
+  border-bottom: 1px solid var(--line);
+}
 .btn {
   display: inline-block; padding: .8rem 1.5rem; border-radius: 999px;
   background: var(--accent-dark); color: #fff; text-decoration: none; font-weight: 500;
