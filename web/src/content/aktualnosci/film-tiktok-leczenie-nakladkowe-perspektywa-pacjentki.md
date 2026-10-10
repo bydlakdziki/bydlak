@@ -5,6 +5,8 @@ date: 2026-09-10
 type: 'W mediach'
 location: 'TikTok, StomatoLogicznie'
 link: 'https://www.tiktok.com/@stomatologicznie/video/7683868406591802656'
+image: '/img/aktualnosci/film-tiktok-leczenie-nakladkowe-dr-marta-kryczka-w-mediach.webp'
+imageAlt: 'Film z dr Martą Kryczką o leczeniu nakładkowym'
 draft: false
 ---
 
