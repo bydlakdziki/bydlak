@@ -5,8 +5,8 @@ date: 2026-09-26
 type: 'Konferencja'
 location: 'Dubrownik, Chorwacja'
 link: 'https://www.theaestheticmedicine.com/'
-image: '/img/aktualnosci/tamc-2026-dubrownik-okladka.webp'
-imageAlt: 'Dr Marta Kryczka na kongresie TAMC 2026 w Dubrowniku'
+image: '/img/aktualnosci/tamc-2026-oficjalna-grafika.webp'
+imageAlt: 'Oficjalna grafika TAMC 2026 – The Aesthetic Medicine Congress, Dubrownik'
 draft: false
 ---
 

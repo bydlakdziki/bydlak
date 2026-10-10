@@ -5,8 +5,8 @@ date: 2026-10-10
 type: 'Konferencja'
 location: 'Warszawa'
 link: 'https://www.slowmedicine.pl/'
-image: '/img/aktualnosci/slow-medicine-conference-panel-dyskusyjny-2026.webp'
-imageAlt: 'Panel dyskusyjny lekarzy medycyny estetycznej podczas Global Slow Medicine Conference w Warszawie'
+image: '/img/aktualnosci/slow-medicine-2026-oficjalna-grafika.webp'
+imageAlt: 'Oficjalna grafika Global Slow Medicine Conference 2026'
 draft: false
 ---
 
