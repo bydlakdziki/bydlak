@@ -118,6 +118,7 @@ img.portrait { padding: 0; background: none; width: 100%; height: auto; object-f
 @media (max-width: 720px) { .about { grid-template-columns: 1fr; } .about-photo { max-width: 320px; } }
 
 .prose img { max-width: 100%; height: auto; border-radius: 12px; margin: 1.5rem 0 .5rem; }
+.prose img[src*="/aktualnosci/"] { max-height: 520px; width: auto; max-width: 100%; margin-right: .75rem; }
 .prose table { width: 100%; border-collapse: collapse; font-size: .85rem; display: block; overflow-x: auto; }
 .prose th, .prose td { border: 1px solid rgba(0,0,0,.12); padding: .5rem; text-align: left; vertical-align: top; }
 .prose th { background: rgba(0,0,0,.04); }
