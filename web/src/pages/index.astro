@@ -59,6 +59,7 @@ const sections = [
         <div class="grid">
           {events.map((e) => (
             <a class="card" href={`/aktualnosci/${e.id}/`} style="text-decoration:none;color:inherit">
+              {e.data.image && <img class="card-img" src={e.data.image} alt={e.data.imageAlt} loading="lazy" />}
               <span class="tag">{e.data.type} · {e.data.date.toLocaleDateString('pl-PL')}</span>
               <h3>{e.data.title}</h3>
               <p>{e.data.description}</p>
