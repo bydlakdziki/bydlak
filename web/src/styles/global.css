@@ -129,3 +129,6 @@ img.portrait { padding: 0; background: none; width: 100%; height: auto; object-f
 .timeline-item p { margin: .2rem 0; }
 .timeline-years { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .timeline-place { color: var(--muted); font-size: .95rem; }
+
+.qual-icon { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; background: var(--surface); border: 1px solid var(--line); color: var(--accent); margin-bottom: 1rem; }
+.section.alt .qual-icon { background: var(--surface); }
