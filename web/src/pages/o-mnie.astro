@@ -2,11 +2,18 @@
 import Base from '../layouts/Base.astro';
 
 const qualifications = [
-  { title: 'Lekarz dentysta', text: 'Wydział Lekarsko-Stomatologiczny Uniwersytetu Medycznego we Wrocławiu (2004–2011), staż podyplomowy 2011–2012.' },
-  { title: 'Ortodoncja', text: 'Master of Science in Orthodontics, Danube Private University w Krems (Austria), 2017–2020. Praktyka w leczeniu nakładkami Invisalign.' },
-  { title: 'Medycyna estetyczna', text: 'Level 7 Facial Aesthetic Therapies, Derma Medical w Londynie (2021–2023). Następnie egzaminator wewnętrzny, odpowiedzialny za certyfikację i ocenę kompetencji innych lekarzy.' },
-  { title: 'Edukacja', text: 'Trener medycyny estetycznej twarzy w Polskim Instytucie Medycyny i Kosmetologii (od 2024).' },
+  { icon: 'dentysta', title: 'Lekarz dentysta', text: 'Wydział Lekarsko-Stomatologiczny Uniwersytetu Medycznego we Wrocławiu (2004–2011), staż podyplomowy 2011–2012.' },
+  { icon: 'ortodoncja', title: 'Ortodoncja', text: 'Master of Science in Orthodontics, Danube Private University w Krems (Austria), 2017–2020. Praktyka w leczeniu nakładkami Invisalign.' },
+  { icon: 'estetyczna', title: 'Medycyna estetyczna', text: 'Level 7 Facial Aesthetic Therapies, Derma Medical w Londynie (2021–2023). Następnie egzaminator wewnętrzny, odpowiedzialny za certyfikację i ocenę kompetencji innych lekarzy.' },
+  { icon: 'edukacja', title: 'Edukacja', text: 'Trener medycyny estetycznej twarzy w Polskim Instytucie Medycyny i Kosmetologii (od 2024).' },
 ];
+
+const icons: Record<string, string> = {
+  dentysta: '<path d="M7 4c2-1 3.5 0 5 0s3-1 5 0c2 1.5 1.5 5 .5 8-.8 2.5-1 8-3 8-1.8 0-1.5-5-2.5-5s-.7 5-2.5 5c-2 0-2.2-5.5-3-8C5.5 9 5 5.5 7 4z"/>',
+  ortodoncja: '<path d="M3 13c3 5 15 5 18 0"/><path d="M5 12v-2h3v2M10.5 12v-2h3v2M16 12v-2h3v2"/><path d="M3 13c3-3 15-3 18 0"/>',
+  estetyczna: '<path d="M4 20l7-7"/><path d="M14 4l6 6-3 3-6-6z"/><path d="M11 13l-3-3M18 2l4 4"/>',
+  edukacja: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c3 2.5 9 2.5 12 0v-4.5M22 9v6"/>',
+};
 
 const treatments = ['toksyna botulinowa', 'biostymulacja', 'terapie enzymatyczne', 'wolumetria', 'modelowanie ust'];
 
@@ -49,7 +56,7 @@ const career = [
       <h2>Kwalifikacje i certyfikaty</h2>
       <div class="grid">
         {qualifications.map((q) => (
-          <div class="card"><h3>{q.title}</h3><p>{q.text}</p></div>
+          <div class="card"><span class="qual-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons[q.icon]} /></span><h3>{q.title}</h3><p>{q.text}</p></div>
         ))}
       </div>
     </div>
