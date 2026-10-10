@@ -52,6 +52,7 @@ a { color: var(--accent-dark); }
   display: flex; align-items: center; justify-content: space-between;
   gap: 1rem; padding: .9rem 0; flex-wrap: wrap;
 }
+.brand img { height: 56px; width: auto; display: block; }
 .brand { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; text-decoration: none; color: var(--ink); }
 nav ul { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; flex-wrap: wrap; }
 nav a { text-decoration: none; color: var(--ink); font-size: .95rem; }

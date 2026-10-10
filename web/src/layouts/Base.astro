@@ -23,7 +23,9 @@ const fullTitle = path === '/' ? title : `${title} | dr Marta Kryczka`;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/img/dr-marta-kryczka-ikona.png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="description" content={description} />
     <link rel="canonical" href={new URL(path, Astro.site)} />
     <meta property="og:title" content={fullTitle} />
@@ -34,7 +36,7 @@ const fullTitle = path === '/' ? title : `${title} | dr Marta Kryczka`;
   <body>
     <header class="site-header">
       <div class="container">
-        <a class="brand" href="/">dr Marta Kryczka</a>
+        <a class="brand" href="/" aria-label="dr Marta Kryczka – strona główna"><img src="/img/dr-marta-kryczka-logo.png" alt="dr Marta Kryczka" width="1200" height="416" /></a>
         <nav aria-label="Główna nawigacja">
           <ul>
             {nav.map((n) => (
