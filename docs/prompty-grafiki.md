@@ -62,6 +62,35 @@ Warm sand-beige background with a thin taupe line face-profile symbol on the lef
 empty space on the right for text, minimal, elegant, flat, premium brand look. No text.
 ```
 
+## 8. O mnie – baner (16:9, 1920×1080, bez osób)
+
+```
+Elegant doctor's desk in warm daylight: framed certificates blurred in the background,
+an open notebook, a fountain pen, a small olive plant and a cup of tea on a light wood
+table, beige and taupe palette, soft natural window light, shallow depth of field,
+calm and trustworthy atmosphere, premium editorial photography, space for text on the
+left, no people, no readable text on the documents, no logos.
+```
+
+## 9. O mnie – tło pod własne zdjęcie Marty (4:5, 1600×2000)
+
+```
+Soft warm sand-beige studio backdrop with gentle window light and a subtle shadow of a
+plant leaf on the wall, plain and uncluttered, space in the centre for a portrait, muted
+taupe and cream tones, premium healthcare brand photography, no people, no text.
+```
+
+## 10. O mnie – ilustracja abstrakcyjna (spójna z hero, 4:5)
+
+```
+Minimal illustration in the same style as the website hero: thin taupe line art of
+two hands gently holding a small leaf, on a warm sand-beige textured background with
+soft overlapping circles, calm, feminine, premium, lots of negative space.
+No text, no realistic faces, no medical symbols.
+```
+
+Na stronie „O mnie” najlepiej sprawdzi się prawdziwe zdjęcie Marty (sesja portretowa). Prompty 8–10 służą jako tło lub dodatek. Nie generuj certyfikatów ani dyplomów: dokumenty na stronie muszą być prawdziwe.
+
 ## Prompt negatywny
 
 ```
