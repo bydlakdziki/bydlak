@@ -13,4 +13,19 @@ const artykuly = defineCollection({
   }),
 });
 
-export const collections = { artykuly };
+const aktualnosci = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/aktualnosci' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    type: z.string().default('Wydarzenie'),
+    location: z.string().optional(),
+    link: z.string().url().optional(),
+    image: z.string().optional(),
+    imageAlt: z.string().default(''),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { artykuly, aktualnosci };

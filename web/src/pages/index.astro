@@ -6,6 +6,10 @@ const latest = (await getCollection('artykuly', (a) => !a.data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 
+const events = (await getCollection('aktualnosci', (a) => !a.data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
 const sections = [
   { href: '/o-mnie/', img: 'gabinet-lekarza-dr-marta-kryczka', title: 'O mnie', text: 'Droga zawodowa, kwalifikacje i podejście do medycyny estetycznej oraz ortodoncji.' },
   { href: '/szkolenia/', img: 'szkolenia', title: 'Szkolenia', text: 'Edukacja dla lekarzy: biostymulacja, wypełniacze, toksyna botulinowa i laseroterapia.' },
@@ -46,6 +50,25 @@ const sections = [
       </div>
     </div>
   </section>
+
+  {events.length > 0 && (
+    <section class="section alt">
+      <div class="container">
+        <p class="eyebrow">Aktualności</p>
+        <h2>Wydarzenia i konferencje</h2>
+        <div class="grid">
+          {events.map((e) => (
+            <a class="card" href={`/aktualnosci/${e.id}/`} style="text-decoration:none;color:inherit">
+              <span class="tag">{e.data.type} · {e.data.date.toLocaleDateString('pl-PL')}</span>
+              <h3>{e.data.title}</h3>
+              <p>{e.data.description}</p>
+            </a>
+          ))}
+        </div>
+        <p><a href="/aktualnosci/">Wszystkie aktualności →</a></p>
+      </div>
+    </section>
+  )}
 
   {latest.length > 0 && (
     <section class="section">
