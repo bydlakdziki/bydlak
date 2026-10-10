@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Kwalifikacje do uzupełnienia i zatwierdzenia przez Martę (tytuły, uczelnie, certyfikaty, daty).
+const qualifications = [
+  { title: 'Wykształcenie', text: 'Do uzupełnienia: uczelnia, wydział, rok ukończenia.' },
+  { title: 'Ortodoncja', text: 'Do uzupełnienia: specjalizacja, szkolenia, certyfikaty (w tym Invisalign).' },
+  { title: 'Medycyna estetyczna', text: 'Do uzupełnienia: szkolenia i certyfikaty z zakresu biostymulacji, wypełniaczy, toksyny botulinowej i laseroterapii.' },
+  { title: 'Edukacja', text: 'Do uzupełnienia: prowadzone szkolenia i współpraca z ośrodkami szkoleniowymi.' },
+];
+---
+
+<Base title="O mnie" description="dr Marta Kryczka – droga zawodowa, kwalifikacje i podejście do medycyny estetycznej oraz ortodoncji.">
+  <section class="page-head">
+    <div class="container">
+      <p class="eyebrow">O mnie</p>
+      <h1>dr Marta Kryczka</h1>
+      <p class="lead">Lekarz dentysta łączący ortodoncję i medycynę estetyczną. Pracuję we Wrocławiu i dzielę się wiedzą z lekarzami w całej Polsce.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>Moje podejście</h2>
+      <p>Do uzupełnienia przez Martę: kilka akapitów o drodze zawodowej, wartościach i sposobie pracy. Najlepiej własnymi słowami, bez obietnic efektów i bez porównań z innymi lekarzami.</p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <h2>Kwalifikacje i certyfikaty</h2>
+      <div class="grid">
+        {qualifications.map((q) => (
+          <div class="card"><h3>{q.title}</h3><p>{q.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+
+const items = [
+  { title: 'Biostymulacja', text: 'Metody wspierające jakość i napięcie skóry. Zakres i oczekiwania omawiane są indywidualnie podczas konsultacji.' },
+  { title: 'Wypełniacze', text: 'Zabiegi modelujące proporcje twarzy, planowane z uwzględnieniem anatomii i zasady umiaru.' },
+  { title: 'Toksyna botulinowa', text: 'Zabiegi stosowane m.in. w redukcji zmarszczek mimicznych; kwalifikacja zawsze poprzedza decyzję.' },
+  { title: 'Laseroterapia', text: 'Metody wykorzystujące energię światła; dobór postępowania zależy od wskazań i stanu skóry.' },
+  { title: 'Ortodoncja i Invisalign', text: 'Leczenie wad zgryzu nakładkami lub innymi aparatami, z uwzględnieniem proporcji twarzy i uśmiechu.' },
+];
+---
+
+<Base title="Zabiegi" description="Informacje o zabiegach medycyny estetycznej i ortodoncji: biostymulacja, wypełniacze, toksyna botulinowa, laseroterapia, Invisalign.">
+  <section class="page-head">
+    <div class="container">
+      <p class="eyebrow">Zabiegi</p>
+      <h1>Zabiegi w odpowiedzialnym ujęciu</h1>
+      <p class="lead">Rzetelne informacje o metodach. Nie każdy zabieg jest dla każdego, a kwalifikacja zawsze odbywa się podczas konsultacji.</p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="grid">
+        {items.map((i) => (
+          <div class="card"><h3>{i.title}</h3><p>{i.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <p class="notice">Opisy mają charakter wyłącznie informacyjny. Nie zawierają obietnic efektów, cen ani zachęt promocyjnych. Teksty i ewentualne zdjęcia przed publikacją należy zatwierdzić pod kątem zasad etyki lekarskiej oraz przepisów o reklamie.</p>
+    </div>
+  </section>
+</Base>
