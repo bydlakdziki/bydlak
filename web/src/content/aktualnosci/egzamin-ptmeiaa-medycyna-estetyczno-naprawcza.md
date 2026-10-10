@@ -10,6 +10,6 @@ imageAlt: 'Dr Marta Kryczka – informacja o zdanym egzaminie z umiejętności z
 draft: false
 ---
 
-W październiku 2026 r. dr Marta Kryczka zdała egzamin z umiejętności zawodowej **Medycyna Estetyczno-Naprawcza (kod 028)**, prowadzony w ramach Polskiego Towarzystwa Medycyny Estetycznej i Anti-Aging (PTMEiAA).
+3 października 2026 r. dr Marta Kryczka zdała egzamin z umiejętności zawodowej **Medycyna Estetyczno-Naprawcza (kod 028)**, prowadzony w ramach Polskiego Towarzystwa Medycyny Estetycznej i Anti-Aging (PTMEiAA).
 
 To kolejny krok w kształceniu w obszarze medycyny estetycznej, uzupełniający wcześniejszą naukę w Derma Medical w Londynie i wieloletnią praktykę kliniczną.
