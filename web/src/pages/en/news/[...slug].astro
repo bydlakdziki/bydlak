@@ -1,0 +1,32 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const events = await getCollection('aktualnosci-en', (a) => !a.data.draft);
+  return events.map((e) => ({ params: { slug: e.id }, props: { entry: e } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Base
+  title={entry.data.title}
+  description={entry.data.description}
+  image={entry.data.image}
+  imageAlt={entry.data.imageAlt}
+  type="article"
+  published={entry.data.date}
+>
+  <article class="section">
+    <div class="container prose">
+      <p class="eyebrow">{entry.data.type} · {entry.data.date.toLocaleDateString('en-GB')}{entry.data.location ? ` · ${entry.data.location}` : ''}</p>
+      <h1>{entry.data.title}</h1>
+      {entry.data.image && <img class="banner" src={entry.data.image} alt={entry.data.imageAlt} loading="lazy" />}
+      <Content />
+      {entry.data.link && <p><a href={entry.data.link} rel="noopener">Event website →</a></p>}
+      <p><a href="/en/news/">← All news</a></p>
+    </div>
+  </article>
+</Base>

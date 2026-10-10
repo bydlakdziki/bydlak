@@ -1,0 +1,81 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const qualifications = [
+  { icon: 'dentysta', logo: 'uniwersytet-medyczny-wroclaw.svg', logoAlt: 'Medical University of Wrocław', title: 'Dentist', text: 'Faculty of Medicine and Dentistry, Medical University of Wrocław (2004–2011), postgraduate internship 2011–2012.' },
+  { icon: 'ortodoncja', logo: 'danube-private-university.png', logoAlt: 'Danube Private University', title: 'Orthodontics', text: 'Master of Science in Orthodontics, Danube Private University in Krems (Austria), 2017–2020. Practice in Invisalign aligner treatment.' },
+  { icon: 'estetyczna', logo: 'derma-medical.svg', logoAlt: 'Derma Medical', title: 'Aesthetic medicine', text: 'Level 7 Facial Aesthetic Therapies, Derma Medical, London (2021–2023). Subsequently an internal examiner, responsible for certification and assessment of other clinicians’ competence.' },
+  { icon: 'edukacja', logo: 'pimik.svg', logoAlt: 'Polish Institute of Medicine and Cosmetology (PIMiK)', title: 'Education', text: 'Facial aesthetic medicine trainer at the Polish Institute of Medicine and Cosmetology (since 2024).' },
+];
+
+const icons: Record<string, string> = {
+  dentysta: '<path d="M7 4c2-1 3.5 0 5 0s3-1 5 0c2 1.5 1.5 5 .5 8-.8 2.5-1 8-3 8-1.8 0-1.5-5-2.5-5s-.7 5-2.5 5c-2 0-2.2-5.5-3-8C5.5 9 5 5.5 7 4z"/>',
+  ortodoncja: '<path d="M3 13c3 5 15 5 18 0"/><path d="M5 12v-2h3v2M10.5 12v-2h3v2M16 12v-2h3v2"/><path d="M3 13c3-3 15-3 18 0"/>',
+  estetyczna: '<path d="M4 20l7-7"/><path d="M14 4l6 6-3 3-6-6z"/><path d="M11 13l-3-3M18 2l4 4"/>',
+  edukacja: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c3 2.5 9 2.5 12 0v-4.5M22 9v6"/>',
+};
+
+const treatments = ['botulinum toxin', 'biostimulation', 'enzymatic therapies', 'volumisation', 'lip shaping'];
+
+const career = [
+  { years: '2026', title: 'Professional skill – Aesthetic and Reparative Medicine (code 028)', place: 'Polish Society of Aesthetic Medicine and Anti-Aging (PTMEiAA)', text: 'Exam passed in October 2026. I also attend professional congresses and conferences in Poland.' },
+  { years: 'since 2024', title: 'Facial aesthetic medicine trainer', place: 'Polish Institute of Medicine and Cosmetology', text: 'I teach courses for physicians in facial aesthetic medicine.' },
+  { years: 'since 2024', title: 'Orthodontist', place: 'Invisalign aligner treatment', text: 'I plan and deliver orthodontic treatment with clear aligners, combining the perspectives of an orthodontist and an aesthetic medicine practitioner.' },
+  { years: '2021–2023', title: 'Internal examiner and aesthetic medicine specialisation', place: 'Derma Medical, London', text: 'I studied on the Level 7 Facial Aesthetic Therapies programme and then served as an internal examiner, responsible for the certification process and for assessing other clinicians’ competence.' },
+  { years: '2014–2023', title: 'Dentist, private practice and NHS', place: 'East Sussex, United Kingdom', text: 'Nine years in the British health system and in private practice: dentistry, orthodontics and a steadily widening scope of aesthetic medicine.' },
+  { years: 'since 2014', title: 'Own practice – Unique Smile Center', place: 'East Sussex', text: 'Running my own practice, where I combined dentistry, orthodontics and aesthetic medicine.' },
+  { years: '2012–2014', title: 'Dentist', place: 'private practice, Wrocław', text: 'My first years of work after the postgraduate internship.' },
+];
+---
+
+<Base title="About me – dentist and orthodontist" description="dr Marta Kryczka – dentist. Medical University of Wrocław, Master of Science in Orthodontics, Level 7 Facial Aesthetic Therapies, trainer for physicians.">
+  <section class="page-head">
+    <div class="container">
+      <p class="eyebrow">About me</p>
+      <h1>dr Marta Kryczka</h1>
+      <p class="lead">A dentist combining orthodontics and aesthetic medicine. I look at the face as a whole, and I share my knowledge with physicians across Poland.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about">
+      <img class="about-photo" src="/img/dr-marta-kryczka-lekarz-dentysta-wroclaw.webp" width="900" height="1350" alt="dr Marta Kryczka – dentist, orthodontics and aesthetic medicine, Wrocław" />
+      <div class="prose">
+        <h2>My approach</h2>
+        <p>My name is Marta Kryczka. I graduated from the Faculty of Medicine and Dentistry at the Medical University of Wrocław. I studied orthodontics at Danube Private University in Krems, Austria, and broadened my aesthetic medicine skills at Derma Medical in London, where I became an internal examiner, responsible for the certification process and the assessment of other clinicians’ competence.</p>
+        <p>For the last 10 years I worked in East Sussex, in the south of England, where I also ran my own practice, Unique Smile Center. Many years of experience in dentistry, orthodontics and aesthetic medicine allow me to look at the face comprehensively.</p>
+        <p>In my work I pay particular attention to facial harmony and proportions, taking into account both age-related changes and the effect of malocclusion on aesthetics and tissue function.</p>
+        <p>At the clinic I perform procedures including {treatments.join(', ')}. I approach every patient individually and holistically, taking their needs and expectations into account.</p>
+        <p>I speak Polish and English (C2 level).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <h2>Qualifications and certificates</h2>
+      <div class="grid">
+        {qualifications.map((q) => (
+          <div class="card"><span class="qual-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons[q.icon]} /></span><h3>{q.title}</h3><p>{q.text}</p><img class="qual-logo" src={`/img/logos/${q.logo}`} alt={q.logoAlt} loading="lazy" /></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>Professional experience</h2>
+      <p>My career combines clinical work in Poland and the United Kingdom with teaching and certifying other clinicians.</p>
+      <div class="timeline">
+        {career.map((c) => (
+          <div class="timeline-item">
+            <span class="timeline-years">{c.years}</span>
+            <h3>{c.title}</h3>
+            <p class="timeline-place">{c.place}</p>
+            <p>{c.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

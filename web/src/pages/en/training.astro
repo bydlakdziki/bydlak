@@ -1,0 +1,52 @@
+---
+import Base from '../../layouts/Base.astro';
+import TopicIcon from '../../components/TopicIcon.astro';
+
+const registerUrl = 'https://pimik.pl/kontakt/';
+const topics = [
+  { title: 'Biostimulation', icon: 'Biostymulacja', text: 'Mechanisms of action, choice of products and methods, limits of the evidence.' },
+  { title: 'Fillers', icon: 'Wypełniacze', text: 'Anatomy, treatment planning, safety and management of complications.' },
+  { title: 'Botulinum toxin', icon: 'Toksyna botulinowa', text: 'Indications, patient selection, a practical approach to dosing and expectations.' },
+  { title: 'Laser therapy', icon: 'Laseroterapia', text: 'Principles of action, patient selection and safe treatment planning.' },
+  { title: 'Inducers', icon: 'Biostymulacja', text: 'Mechanisms for stimulating tissue regeneration, choice of products and treatment planning.' },
+  { title: 'Working with a cannula', icon: 'Wypełniacze', text: 'Principles of cannula work, choice of size, injection technique and safety around vascular structures.' },
+  { title: 'Tropocollagen in aesthetic medicine', icon: 'Tropokolagen', text: 'Uses in work with skin and tissues, patient selection and a practical approach to the plan.' },
+  { title: 'Tropocollagen in bruxism', icon: 'Tropokolagen', text: 'Possible uses in working with the tissues of patients with bruxism, from the perspective of an orthodontist and aesthetic medicine practitioner.' },
+  { title: 'Platelet-rich plasma and fibrin', icon: 'Osocze bogatopłytkowe i fibryna bogatopłytkowa', text: 'Preparation of autologous products, indications, technique and safety.' },
+  { title: 'Regeneration of the eye area', icon: 'Biostymulacja', text: 'Anatomy of the eye area, patient selection, choice of methods and management of complications.' },
+  { title: 'Recombinant enzymes', icon: 'Enzymy rekombinowane', text: 'Indications, mechanism of action and safe treatment planning.' },
+  { title: 'Polylactic acid', icon: 'Kwas polimlekowy', text: 'Biostimulatory action, patient selection, technique and expectations about effects over time.' },
+  { title: 'Calcium hydroxyapatite', icon: 'Hydroksyapatyt wapnia', text: 'Product properties, choice of technique and injection site, safety.' },
+];
+---
+
+<Base title="Aesthetic medicine training" description="Aesthetic medicine courses for physicians: biostimulators, fillers, botulinum toxin, tropocollagen, PRP and enzymes. Registration via PIMiK (courses in Polish). Anatomy, patient selection, safety.">
+  <section class="page-head">
+    <div class="container">
+      <p class="eyebrow">Training</p>
+      <h1>Education for physicians</h1>
+      <p class="lead">Courses focused on clinical reasoning and safe practice in aesthetic medicine. Courses are taught in Polish.</p>
+      <p><a class="btn" href={registerUrl} target="_blank" rel="noopener">Register for a course</a></p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container"><img class="banner" src="/img/szkolenia.webp" alt="Bright training room with an anatomical model" width="1920" height="1080" /></div>
+    <div class="container">
+      <h2>Scope of the courses I teach</h2>
+      <div class="grid">
+        {topics.map((t) => (
+          <div class="card"><TopicIcon name={t.icon ?? t.title} /><h3>{t.title}</h3><p>{t.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>Dates and programme</h2>
+      <p>I teach facial aesthetic medicine courses as a trainer at the Polish Institute of Medicine and Cosmetology (since 2024). Current dates and the programme are published by the organiser, and registration takes place on the organiser’s website (in Polish).</p>
+      <p><a class="btn ghost" href={registerUrl} target="_blank" rel="noopener">Registration: PIMiK – contact</a></p>
+    </div>
+  </section>
+</Base>

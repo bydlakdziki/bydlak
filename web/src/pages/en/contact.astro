@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Contact" description="Contact dr Marta Kryczka: questions about collaboration, training and treatments. Contact form.">
+  <section class="page-head">
+    <div class="container">
+      <p class="eyebrow">Contact</p>
+      <h1>Write to me</h1>
+      <p class="lead">Have a question about training, collaboration or treatments? Send a message and I will reply as soon as I can. You can also book a visit via <a href="https://www.znanylekarz.pl/placowki/mei-clinic" target="_blank" rel="noopener">ZnanyLekarz</a> (in Polish).</p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <p id="form-status" class="form-status" role="status" hidden></p>
+      <form class="contact-form" method="post" action="/wyslij.php">
+        <input type="hidden" name="lang" value="en" />
+        <label>Full name<input type="text" name="name" required maxlength="120" autocomplete="name" /></label>
+        <label>Email address<input type="email" name="email" required maxlength="160" autocomplete="email" /></label>
+        <label>Subject<input type="text" name="subject" maxlength="160" /></label>
+        <label>Message<textarea name="message" rows="6" required maxlength="5000"></textarea></label>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <label class="check"><input type="checkbox" name="consent" required /> I consent to the processing of my data in order to reply to my message. Please do not send health information through this form.</label>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const status = document.getElementById('form-status');
+    const s = new URLSearchParams(location.search).get('status');
+    if (status && s) {
+      status.hidden = false;
+      status.className = 'form-status ' + (s === 'ok' ? 'ok' : 'err');
+      status.textContent = s === 'ok' ? 'Thank you, your message has been sent.' : 'The message could not be sent. Please check your details and try again.';
+    }
+  </script>
+</Base>

@@ -23,14 +23,47 @@ const {
   jsonLd = [],
 } = Astro.props;
 const path = Astro.url.pathname;
-const nav = [
-  { href: '/o-mnie/', label: 'O mnie' },
-  { href: '/szkolenia/', label: 'Szkolenia' },
-  { href: '/zabiegi/', label: 'Zabiegi' },
-  { href: '/aktualnosci/', label: 'Aktualności' },
-  { href: '/artykuly/', label: 'Artykuły' },
-  { href: '/kontakt/', label: 'Kontakt' },
+const isEn = path === '/en/' || path.startsWith('/en/');
+const lang = isEn ? 'en' : 'pl';
+const pairs: [string, string][] = [
+  ['/o-mnie/', '/en/about/'],
+  ['/szkolenia/', '/en/training/'],
+  ['/zabiegi/', '/en/treatments/'],
+  ['/aktualnosci/', '/en/news/'],
+  ['/artykuly/', '/en/articles/'],
+  ['/kontakt/', '/en/contact/'],
 ];
+const toEn = (p: string) => {
+  if (p === '/') return '/en/';
+  for (const [pl, en] of pairs) if (p.startsWith(pl)) return en + p.slice(pl.length);
+  return null;
+};
+const toPl = (p: string) => {
+  if (p === '/en/') return '/';
+  for (const [pl, en] of pairs) if (p.startsWith(en)) return pl + p.slice(en.length);
+  return null;
+};
+const altPath = isEn ? toPl(path) : toEn(path);
+const plPath = isEn ? altPath : path;
+const enPath = isEn ? path : altPath;
+const homeHref = isEn ? '/en/' : '/';
+const nav = isEn
+  ? [
+      { href: '/en/about/', label: 'About' },
+      { href: '/en/training/', label: 'Training' },
+      { href: '/en/treatments/', label: 'Treatments' },
+      { href: '/en/news/', label: 'News' },
+      { href: '/en/articles/', label: 'Articles' },
+      { href: '/en/contact/', label: 'Contact' },
+    ]
+  : [
+      { href: '/o-mnie/', label: 'O mnie' },
+      { href: '/szkolenia/', label: 'Szkolenia' },
+      { href: '/zabiegi/', label: 'Zabiegi' },
+      { href: '/aktualnosci/', label: 'Aktualności' },
+      { href: '/artykuly/', label: 'Artykuły' },
+      { href: '/kontakt/', label: 'Kontakt' },
+    ];
 const canonical = new URL(path, Astro.site).href;
 const ogImage = new URL(image, Astro.site).href;
 const site = Astro.site!.href.replace(/\/$/, '');
@@ -39,9 +72,9 @@ const person = {
   '@id': `${site}/#person`,
   name: 'dr Marta Kryczka',
   honorificPrefix: 'dr',
-  jobTitle: 'Lekarz dentysta',
-  description: 'Lekarz dentysta łączący ortodoncję i medycynę estetyczną. Edukator lekarzy.',
-  url: `${site}/`,
+  jobTitle: isEn ? 'Dentist' : 'Lekarz dentysta',
+  description: isEn ? 'Dentist combining orthodontics and aesthetic medicine. Educator of physicians.' : 'Lekarz dentysta łączący ortodoncję i medycynę estetyczną. Edukator lekarzy.',
+  url: `${site}${homeHref}`,
   image: `${site}/img/dr-marta-kryczka-lekarz-dentysta-wroclaw.webp`,
   sameAs: ['https://www.instagram.com/drmartakryczka/'],
   alumniOf: [
@@ -51,15 +84,15 @@ const person = {
   knowsAbout: ['medycyna estetyczna', 'ortodoncja', 'Invisalign', 'biostymulacja', 'laseroterapia', 'toksyna botulinowa', 'wypełniacze'],
 };
 const baseLd = [
-  { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${site}/#website`, url: `${site}/`, name: 'dr Marta Kryczka', inLanguage: 'pl-PL', publisher: { '@id': `${site}/#person` } },
+  { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${site}/#website`, url: `${site}${homeHref}`, name: 'dr Marta Kryczka', inLanguage: isEn ? 'en-GB' : 'pl-PL', publisher: { '@id': `${site}/#person` } },
   { '@context': 'https://schema.org', ...person },
 ];
 const graph = [...baseLd, ...jsonLd.map((j) => ({ '@context': 'https://schema.org', ...j }))];
-const fullTitle = path === '/' ? title : `${title} | dr Marta Kryczka`;
+const fullTitle = path === '/' || path === '/en/' ? title : `${title} | dr Marta Kryczka`;
 ---
 
 <!doctype html>
-<html lang="pl">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -69,13 +102,20 @@ const fullTitle = path === '/' ? title : `${title} | dr Marta Kryczka`;
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {plPath && enPath && (
+      <>
+        <link rel="alternate" hreflang="pl" href={new URL(plPath, Astro.site).href} />
+        <link rel="alternate" hreflang="en" href={new URL(enPath, Astro.site).href} />
+        <link rel="alternate" hreflang="x-default" href={new URL(plPath, Astro.site).href} />
+      </>
+    )}
     {noindex && <meta name="robots" content="noindex" />}
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content="dr Marta Kryczka" />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:locale" content={isEn ? 'en_GB' : 'pl_PL'} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:alt" content={imageAlt} />
     {published && <meta property="article:published_time" content={published.toISOString()} />}
@@ -89,12 +129,15 @@ const fullTitle = path === '/' ? title : `${title} | dr Marta Kryczka`;
   <body>
     <header class="site-header">
       <div class="container">
-        <a class="brand" href="/" aria-label="dr Marta Kryczka – strona główna"><img src="/img/dr-marta-kryczka-logo.png" alt="dr Marta Kryczka" width="1200" height="416" /></a>
-        <nav aria-label="Główna nawigacja">
+        <a class="brand" href={homeHref} aria-label={isEn ? 'dr Marta Kryczka – home page' : 'dr Marta Kryczka – strona główna'}><img src="/img/dr-marta-kryczka-logo.png" alt="dr Marta Kryczka" width="1200" height="416" /></a>
+        <nav aria-label={isEn ? 'Main navigation' : 'Główna nawigacja'}>
           <ul>
             {nav.map((n) => (
               <li><a href={n.href} aria-current={path.startsWith(n.href) ? 'page' : undefined}>{n.label}</a></li>
             ))}
+            {altPath && (
+              <li><a class="lang-switch" href={altPath} hreflang={isEn ? 'pl' : 'en'} lang={isEn ? 'pl' : 'en'} aria-label={isEn ? 'Polski' : 'English'}>{isEn ? 'PL' : 'EN'}</a></li>
+            )}
           </ul>
         </nav>
       </div>
@@ -103,7 +146,7 @@ const fullTitle = path === '/' ? title : `${title} | dr Marta Kryczka`;
     <footer class="site-footer">
       <div class="container">
         <span>© {new Date().getFullYear()} dr Marta Kryczka</span>
-        <span>Treści mają charakter edukacyjny i nie zastępują konsultacji lekarskiej.</span>
+        <span>{isEn ? 'Content is for information and education and does not replace a medical consultation.' : 'Treści mają charakter edukacyjny i nie zastępują konsultacji lekarskiej.'}</span>
         <a href="https://instagram.com/drmartakryczka" rel="noopener">Instagram</a>
       </div>
     </footer>

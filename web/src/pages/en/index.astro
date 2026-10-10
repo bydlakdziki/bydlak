@@ -1,0 +1,142 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const latest = (await getCollection('artykuly-en', (a) => !a.data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const events = (await getCollection('aktualnosci-en', (a) => !a.data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const nb = (t: string) => t;
+
+const trust = [
+  { file: 'uniwersytet-medyczny-wroclaw.svg', alt: 'Medical University of Wrocław' },
+  { file: 'danube-private-university.png', alt: 'Danube Private University' },
+  { file: 'derma-medical.svg', alt: 'Derma Medical' },
+  { file: 'pimik.svg', alt: 'Polish Institute of Medicine and Cosmetology (PIMiK)' },
+];
+
+const sections = [
+  { href: '/en/about/', img: 'gabinet-lekarza-dr-marta-kryczka', title: 'About me', text: 'My career, qualifications and approach to aesthetic medicine and orthodontics.' },
+  { href: '/en/training/', img: 'szkolenia', title: 'Training', text: 'Education for physicians: biostimulation, fillers, botulinum toxin and laser therapy.' },
+  { href: '/en/treatments/', img: 'zabiegi', title: 'Treatments', text: 'Information on the methods, indications and limitations used in practice.' },
+  { href: '/en/articles/', img: 'artykuly-en', title: 'Articles', text: 'Reliable information on aesthetic medicine and orthodontics.' },
+];
+---
+
+<Base title="dr Marta Kryczka – aesthetic medicine and orthodontics, Wrocław" description="Dentist combining aesthetic medicine and orthodontics (Invisalign). Education for physicians: biostimulation, fillers, botulinum toxin, laser therapy.">
+  <section class="hero">
+    <div class="container">
+      <div>
+        <p class="eyebrow">Dentist · Wrocław</p>
+        <h1>Aesthetic medicine and orthodontics with facial harmony in mind</h1>
+        <p class="lead">
+          Knowledge, a responsible approach to procedures, and education for physicians and anyone interested in smile aesthetics.
+        </p>
+        <div class="actions">
+          <a class="btn" href="https://www.znanylekarz.pl/placowki/mei-clinic" target="_blank" rel="noopener">Book a visit</a>
+          <a class="btn ghost" href="/en/training/">Training for physicians</a>
+          <a class="btn ghost" href="/en/about/">Read my story</a>
+        </div>
+      </div>
+      <img class="portrait" src="/img/dr-marta-kryczka-portret.webp" alt="Dr Marta Kryczka, dentist, with a cup of coffee" width="1200" height="1500" fetchpriority="high" />
+    </div>
+  </section>
+
+  <section class="section vision">
+    <div class="container">
+      <p class="eyebrow">My vision</p>
+      <h2>Beauty that begins with safety</h2>
+      <p class="vision-lead">{nb('I look at the patient as a whole: I combine an orthodontic view of the facial bone structures with care for soft-tissue regeneration, because facial harmony depends on both.')}</p>
+      <div class="vision-grid">
+        <div class="card">
+          <h3>{nb('Safety first')}</h3>
+          <p>{nb('I know how important a sense of safety is, because I was an oncology patient myself. I have experience planning treatment for people after cancer and with autoimmune conditions.')}</p>
+        </div>
+        <div class="card">
+          <h3>{nb('I especially welcome')}</h3>
+          <p>{nb('People after radiotherapy and chemotherapy who want to look after their appearance in a considered and safe way. Every plan is individual, made after a conversation and qualification, and its scope is determined by your health.')}</p>
+        </div>
+      </div>
+      <p><a class="btn" href="/en/contact/">Write to me</a></p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="grid">
+        {sections.map((s) => (
+          <div class="card">
+            <img class="card-img" src={`/img/${s.img}.webp`} alt="" width="1200" height="720" loading="lazy" />
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+            <a class="more" href={s.href}>Go →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Education and collaboration</p>
+      <h2>Where my knowledge comes from</h2>
+      <div class="logo-strip">
+        {trust.map((t) => (<img src={`/img/logos/${t.file}`} alt={t.alt} loading="lazy" />))}
+      </div>
+      <p class="muted">Medical University of Wrocław, orthodontics at Danube Private University, aesthetic medicine at Derma Medical in London, and since 2024 I have been teaching at PIMiK. Patient reviews are available on the clinic profile on <a href="https://www.znanylekarz.pl/placowki/mei-clinic" target="_blank" rel="noopener">ZnanyLekarz</a>.</p>
+    </div>
+  </section>
+
+  {events.length > 0 && (
+    <section class="section alt">
+      <div class="container">
+        <p class="eyebrow">News</p>
+        <h2>Events and conferences</h2>
+        <div class="grid">
+          {events.map((e) => (
+            <a class="card" href={`/en/news/${e.id}/`} style="text-decoration:none;color:inherit">
+              {e.data.image && <img class="card-img" src={e.data.image} alt={e.data.imageAlt} loading="lazy" />}
+              <span class="tag">{e.data.type} · {e.data.date.toLocaleDateString('en-GB')}</span>
+              <h3>{e.data.title}</h3>
+              <p>{e.data.description}</p>
+            </a>
+          ))}
+        </div>
+        <p><a href="/en/news/">All news →</a></p>
+      </div>
+    </section>
+  )}
+
+  {latest.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Knowledge</p>
+        <h2>Latest articles</h2>
+        <div class="grid">
+          {latest.map((a) => (
+            <a class="card" href={`/en/articles/${a.id}/`} style="text-decoration:none;color:inherit">
+              {a.data.image && <img class="card-img" src={a.data.image} alt={a.data.imageAlt} loading="lazy" />}
+              <span class="tag">{a.data.category}</span>
+              <h3>{a.data.title}</h3>
+              <p>{a.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+  <section class="section alt">
+    <div class="container ig-cta">
+      <div>
+        <p class="eyebrow">Instagram</p>
+        <h2>Day to day on Instagram</h2>
+        <p class="muted">Conference reports, short educational pieces and behind the scenes. Follow along.</p>
+      </div>
+      <a class="btn" href="https://www.instagram.com/drmartakryczka/" target="_blank" rel="noopener">@drmartakryczka</a>
+    </div>
+  </section>
+</Base>
