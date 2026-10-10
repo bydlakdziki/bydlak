@@ -1,12 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
 
-// Kwalifikacje do uzupełnienia i zatwierdzenia przez Martę (tytuły, uczelnie, certyfikaty, daty).
 const qualifications = [
-  { title: 'Wykształcenie', text: 'Do uzupełnienia: uczelnia, wydział, rok ukończenia.' },
-  { title: 'Ortodoncja', text: 'Do uzupełnienia: specjalizacja, szkolenia, certyfikaty (w tym Invisalign).' },
-  { title: 'Medycyna estetyczna', text: 'Do uzupełnienia: szkolenia i certyfikaty z zakresu biostymulacji, wypełniaczy, toksyny botulinowej i laseroterapii.' },
-  { title: 'Edukacja', text: 'Do uzupełnienia: prowadzone szkolenia i współpraca z ośrodkami szkoleniowymi.' },
+  { title: 'Lekarz dentysta', text: 'Uniwersytet Medyczny we Wrocławiu (wcześniej Akademia Medyczna), studia stomatologiczne 2004–2011, staż podyplomowy 2011–2012.' },
+  { title: 'Ortodoncja', text: 'Master of Science in Orthodontics, Danube Private University w Krems (Austria), 2017–2020. Praktyka w leczeniu nakładkami Invisalign.' },
+  { title: 'Medycyna estetyczna', text: 'Level 7 Facial Aesthetic Therapies, Derma Medical w Londynie, 2021–2023.' },
+  { title: 'Edukacja', text: 'Trener medycyny estetycznej twarzy w Polskim Instytucie Medycyny i Kosmetologii (od 2024). Wcześniej trener medyczny w 2024 roku.' },
+];
+
+const career = [
+  { years: 'od 2014', text: 'Unique Smile, własna praktyka (medycyna estetyczna)' },
+  { years: 'od 2024', text: 'Polski Instytut Medycyny i Kosmetologii, trener medycyny estetycznej twarzy' },
+  { years: 'od 2024', text: 'Lekarz ortodonta, leczenie nakładkami Invisalign' },
+  { years: '2014–2023', text: 'Lekarz dentysta (praktyka prywatna i NHS) w Wielkiej Brytanii' },
+  { years: '2012–2014', text: 'Lekarz dentysta w praktyce prywatnej we Wrocławiu' },
 ];
 ---
 
@@ -24,7 +31,9 @@ const qualifications = [
       <img class="about-photo" src="/img/dr-marta-kryczka-lekarz-dentysta-wroclaw.webp" width="900" height="1350" alt="dr Marta Kryczka – lekarz dentysta, ortodoncja i medycyna estetyczna, Wrocław" />
       <div class="prose">
         <h2>Moje podejście</h2>
-        <p>Do uzupełnienia przez Martę: kilka akapitów o drodze zawodowej, wartościach i sposobie pracy. Najlepiej własnymi słowami, bez obietnic efektów i bez porównań z innymi lekarzami.</p>
+        <p>Jestem lekarzem dentystą. Pracowałam we Wrocławiu i przez prawie dekadę w Wielkiej Brytanii, w praktyce prywatnej i w ramach NHS. Z tego doświadczenia wynika podejście, w którym liczy się solidna diagnostyka, szczera rozmowa o możliwościach i ograniczeniach oraz umiar.</p>
+        <p>Łączę ortodoncję z medycyną estetyczną twarzy, bo uśmiech jest częścią całości. Prowadzę własną praktykę Unique Smile i uczę innych lekarzy.</p>
+        <p>Mówię po polsku i po angielsku (poziom C2).</p>
       </div>
     </div>
   </section>
@@ -37,6 +46,15 @@ const qualifications = [
           <div class="card"><h3>{q.title}</h3><p>{q.text}</p></div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>Doświadczenie zawodowe</h2>
+      <ul>
+        {career.map((c) => <li><strong>{c.years}:</strong> {c.text}</li>)}
+      </ul>
     </div>
   </section>
 </Base>
