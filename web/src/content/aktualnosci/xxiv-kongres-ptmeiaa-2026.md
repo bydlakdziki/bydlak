@@ -5,8 +5,8 @@ date: 2026-10-04
 type: 'Kongres'
 location: 'Warszawa'
 link: 'https://kongres.ptmeiaa.pl/'
-image: '/img/aktualnosci/kongres-ptmeiaa-anatomia-wspolpracy-dr-marta-kryczka-2026.webp'
-imageAlt: 'Dr Marta Kryczka na tle ścianki XXIV Międzynarodowego Kongresu Medycyny Estetycznej i Anti-Aging w Warszawie'
+image: '/img/aktualnosci/kongres-ptmeiaa-2026-oficjalna-grafika.webp'
+imageAlt: 'Oficjalna grafika XXIV Międzynarodowego Kongresu Medycyny Estetycznej i Anti-Aging PTMEiAA'
 draft: false
 ---
 
