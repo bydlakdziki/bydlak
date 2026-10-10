@@ -3,8 +3,8 @@ title: "Tropocollagen in the regeneration of oral soft tissues: the latest repor
 description: "A clinical observation of gingival condition after tropocollagen injections in patients treated orthodontically with Invisalign aligners. A summary of my publication in Reumatologia 2024."
 date: 2026-10-10
 category: "Orthodontics"
-image: "/img/artykuly-biostymulatory-siec-kolagenu-fibroblasty.webp"
-imageAlt: "Illustration: collagen fibres and fibroblasts"
+image: "/img/artykuly-tropokolagen-dziaslo-nakladki.webp"
+imageAlt: "Illustration: clear aligners on teeth and golden collagen fibres in the gum tissue"
 draft: false
 ---
 
