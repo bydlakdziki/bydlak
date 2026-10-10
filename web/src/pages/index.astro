@@ -78,6 +78,7 @@ const sections = [
         <div class="grid">
           {latest.map((a) => (
             <a class="card" href={`/artykuly/${a.id}/`} style="text-decoration:none;color:inherit">
+              {a.data.image && <img class="card-img" src={a.data.image} alt={a.data.imageAlt} loading="lazy" />}
               <span class="tag">{a.data.category}</span>
               <h3>{a.data.title}</h3>
               <p>{a.data.description}</p>
