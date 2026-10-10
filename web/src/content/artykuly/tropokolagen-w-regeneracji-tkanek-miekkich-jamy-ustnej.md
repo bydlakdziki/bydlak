@@ -3,8 +3,8 @@ title: "Tropokolagen w regeneracji tkanek miękkich jamy ustnej: najnowsze donie
 description: "Obserwacja kliniczna stanu dziąseł po iniekcjach tropokolagenu u pacjentów leczonych ortodontycznie nakładkami Invisalign. Omówienie mojej publikacji z Reumatologii 2024."
 date: 2026-10-10
 category: "Ortodoncja"
-image: "/img/artykuly-biostymulatory-siec-kolagenu-fibroblasty.webp"
-imageAlt: "Ilustracja poglądowa: włókna kolagenowe i fibroblasty"
+image: "/img/artykuly-tropokolagen-dziaslo-nakladki.webp"
+imageAlt: "Ilustracja poglądowa: przezroczyste nakładki na zębach i złote włókna kolagenu w tkance dziąsła"
 draft: false
 ---
 
