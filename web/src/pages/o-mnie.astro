@@ -11,11 +11,13 @@ const qualifications = [
 const treatments = ['toksyna botulinowa', 'biostymulacja', 'terapie enzymatyczne', 'wolumetria', 'modelowanie ust'];
 
 const career = [
-  { years: 'od 2014', text: 'Unique Smile Center, własna praktyka (medycyna estetyczna)' },
-  { years: 'od 2024', text: 'Polski Instytut Medycyny i Kosmetologii, trener medycyny estetycznej twarzy' },
-  { years: 'od 2024', text: 'Lekarz ortodonta, leczenie nakładkami Invisalign' },
-  { years: '2014–2023', text: 'Lekarz dentysta (praktyka prywatna i NHS), hrabstwo East Sussex, Wielka Brytania' },
-  { years: '2012–2014', text: 'Lekarz dentysta w praktyce prywatnej we Wrocławiu' },
+  { years: '2026', title: 'Umiejętność zawodowa – Medycyna Estetyczno-Naprawcza (kod 028)', place: 'Polskie Towarzystwo Medycyny Estetycznej i Anti-Aging', text: 'Egzamin zdany w październiku 2026 r. Uczestniczę też w kongresach i konferencjach branżowych w Polsce.' },
+  { years: 'od 2024', title: 'Trener medycyny estetycznej twarzy', place: 'Polski Instytut Medycyny i Kosmetologii', text: 'Prowadzę szkolenia dla lekarzy z zakresu medycyny estetycznej twarzy.' },
+  { years: 'od 2024', title: 'Lekarz ortodonta', place: 'Leczenie nakładkami Invisalign', text: 'Planuję i prowadzę leczenie ortodontyczne przezroczystymi nakładkami, łącząc perspektywę ortodonty i medycyny estetycznej.' },
+  { years: '2021–2023', title: 'Egzaminator wewnętrzny i specjalizacja w medycynie estetycznej', place: 'Derma Medical, Londyn', text: 'Nauka w programie Level 7 Facial Aesthetic Therapies, a następnie rola egzaminatora wewnętrznego: odpowiadałam za proces certyfikacji i ocenę kompetencji innych lekarzy.' },
+  { years: '2014–2023', title: 'Lekarz dentysta, praktyka prywatna i NHS', place: 'hrabstwo East Sussex, Wielka Brytania', text: 'Dziewięć lat pracy w brytyjskim systemie opieki zdrowotnej i w praktyce prywatnej: stomatologia, ortodoncja i stopniowo coraz szerszy zakres medycyny estetycznej.' },
+  { years: 'od 2014', title: 'Własna praktyka – Unique Smile Center', place: 'East Sussex', text: 'Prowadzenie własnej praktyki, w której łączyłam stomatologię, ortodoncję i medycynę estetyczną.' },
+  { years: '2012–2014', title: 'Lekarz dentysta', place: 'praktyka prywatna, Wrocław', text: 'Pierwsze lata pracy po stażu podyplomowym.' },
 ];
 ---
 
@@ -56,9 +58,17 @@ const career = [
   <section class="section">
     <div class="container prose">
       <h2>Doświadczenie zawodowe</h2>
-      <ul>
-        {career.map((c) => <li><strong>{c.years}:</strong> {c.text}</li>)}
-      </ul>
+      <p>Droga zawodowa łączy pracę kliniczną w Polsce i Wielkiej Brytanii z nauczaniem i certyfikacją innych lekarzy.</p>
+      <div class="timeline">
+        {career.map((c) => (
+          <div class="timeline-item">
+            <span class="timeline-years">{c.years}</span>
+            <h3>{c.title}</h3>
+            <p class="timeline-place">{c.place}</p>
+            <p>{c.text}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 </Base>
