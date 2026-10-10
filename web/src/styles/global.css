@@ -137,7 +137,7 @@ img.portrait { padding: 0; background: none; width: 100%; height: auto; object-f
 
 .device-list { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
 .device { display: grid; grid-template-columns: 1fr; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.device-img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.device-img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #fff; display: block; }
 .device-body { padding: 1.5rem; }
 .device-body p { color: var(--muted); }
 .device-body ul { margin: .8rem 0 1.2rem; padding-left: 1.2rem; color: var(--ink); }

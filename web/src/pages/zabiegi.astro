@@ -72,7 +72,7 @@ const items = [
       <div class="device-list">
         {devices.map((d) => (
           <article class="device">
-            {d.image && <img class="device-img" src={d.image} alt={d.name} loading="lazy" onerror="this.remove()" />}
+            {d.image && <img class="device-img" src={d.image} alt={d.name} loading="lazy" />}
             <div class="device-body">
               <h3>{d.name}</h3>
               <p class="tag">{d.tagline}</p>
