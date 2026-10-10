@@ -144,3 +144,16 @@ img.portrait { padding: 0; background: none; width: 100%; height: auto; object-f
 @media (min-width: 760px) {
   .device:has(.device-img) { grid-template-columns: 340px 1fr; }
 }
+
+.contact-form { display: grid; gap: 1rem; max-width: 640px; }
+.contact-form label { display: grid; gap: .35rem; font-size: .95rem; }
+.contact-form input[type=text], .contact-form input[type=email], .contact-form textarea {
+  font: inherit; padding: .7rem .85rem; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink);
+}
+.contact-form .check { display: flex; gap: .6rem; align-items: flex-start; font-size: .85rem; color: var(--muted); }
+.contact-form .check input { margin-top: .25rem; }
+.contact-form .hp { position: absolute; left: -9999px; }
+.contact-form button { justify-self: start; border: 0; cursor: pointer; font: inherit; }
+.form-status { padding: .8rem 1rem; border-radius: 10px; max-width: 640px; }
+.form-status.ok { background: #e8f3ea; color: #1f5a2c; }
+.form-status.err { background: #fbeaea; color: #8a2222; }
