@@ -2,20 +2,31 @@
 import Base from '../layouts/Base.astro';
 import TopicIcon from '../components/TopicIcon.astro';
 
+const registerUrl = 'https://pimik.pl/kontakt/';
 const topics = [
   { title: 'Biostymulacja', text: 'Mechanizmy działania, dobór preparatów i metod, ograniczenia dowodów.' },
   { title: 'Wypełniacze', text: 'Anatomia, planowanie zabiegu, bezpieczeństwo i postępowanie w powikłaniach.' },
   { title: 'Toksyna botulinowa', text: 'Wskazania, kwalifikacja pacjenta, praktyczne podejście do dawkowania i oczekiwań.' },
   { title: 'Laseroterapia', text: 'Zasady działania, kwalifikacja i bezpieczne planowanie postępowania.' },
+  { title: 'Induktory', icon: 'Biostymulacja', text: 'Mechanizmy pobudzania tkanek do regeneracji, dobór preparatów i planowanie postępowania.' },
+  { title: 'Tropokolagen', text: 'Budowa i rola w strukturze skóry, zasady stosowania oraz ograniczenia dowodów.' },
+  { title: 'Tropokolagen w medycynie estetycznej', icon: 'Tropokolagen', text: 'Zastosowania w pracy ze skórą i tkankami, kwalifikacja i praktyczne podejście do planu.' },
+  { title: 'Tropokolagen w bruksizmie', icon: 'Tropokolagen', text: 'Możliwości wykorzystania w pracy z tkankami pacjentów z bruksizmem, z perspektywy ortodonty i lekarza medycyny estetycznej.' },
+  { title: 'Osocze bogatopłytkowe i fibryna', icon: 'Osocze bogatopłytkowe i fibryna bogatopłytkowa', text: 'Przygotowanie preparatów autologicznych, wskazania, technika i bezpieczeństwo.' },
+  { title: 'Regeneracja okolicy oka', icon: 'Biostymulacja', text: 'Anatomia okolicy oka, kwalifikacja pacjenta, wybór metod i postępowanie w razie powikłań.' },
+  { title: 'Enzymy rekombinowane', text: 'Wskazania, mechanizm działania i bezpieczne planowanie postępowania.' },
+  { title: 'Kwas polimlekowy', text: 'Działanie biostymulujące, kwalifikacja, technika i oczekiwania co do efektu w czasie.' },
+  { title: 'Hydroksyapatyt wapnia', text: 'Właściwości preparatów, dobór techniki i miejsca podania, bezpieczeństwo.' },
 ];
 ---
 
-<Base title="Szkolenia z medycyny estetycznej" description="Szkolenia z medycyny estetycznej dla lekarzy: biostymulacja, wypełniacze, toksyna botulinowa i laseroterapia. Anatomia, kwalifikacja pacjenta, bezpieczeństwo.">
+<Base title="Szkolenia z medycyny estetycznej" description="Szkolenia z medycyny estetycznej dla lekarzy: biostymulatory, wypełniacze, toksyna botulinowa, tropokolagen, PRP i enzymy. Zapisy przez PIMiK. Anatomia, kwalifikacja pacjenta, bezpieczeństwo.">
   <section class="page-head">
     <div class="container">
       <p class="eyebrow">Szkolenia</p>
       <h1>Edukacja dla lekarzy</h1>
       <p class="lead">Szkolenia poświęcone rozumowaniu klinicznemu i bezpiecznej praktyce w medycynie estetycznej.</p>
+      <p><a class="btn" href={registerUrl} target="_blank" rel="noopener">Zapisz się na szkolenie</a></p>
     </div>
   </section>
 
@@ -25,7 +36,7 @@ const topics = [
       <h2>Tematy</h2>
       <div class="grid">
         {topics.map((t) => (
-          <div class="card"><TopicIcon name={t.title} /><h3>{t.title}</h3><p>{t.text}</p></div>
+          <div class="card"><TopicIcon name={t.icon ?? t.title} /><h3>{t.title}</h3><p>{t.text}</p></div>
         ))}
       </div>
     </div>
@@ -34,7 +45,8 @@ const topics = [
   <section class="section">
     <div class="container prose">
       <h2>Terminy i program</h2>
-      <p>Prowadzę szkolenia z medycyny estetycznej twarzy jako trener w Polskim Instytucie Medycyny i Kosmetologii (od 2024). Aktualne terminy i program publikuje organizator szkoleń. Strona ma charakter informacyjny i nie służy sprzedaży miejsc.</p>
+      <p>Prowadzę szkolenia z medycyny estetycznej twarzy jako trener w Polskim Instytucie Medycyny i Kosmetologii (od 2024). Aktualne terminy i program publikuje organizator szkoleń. Zapisy odbywają się przez stronę organizatora.</p>
+      <p><a class="btn ghost" href={registerUrl} target="_blank" rel="noopener">Zapisy: PIMiK – kontakt</a></p>
     </div>
   </section>
 </Base>
