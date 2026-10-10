@@ -1,6 +1,6 @@
 ---
 title: 'Umiejętność zawodowa z medycyny estetyczno-naprawczej (PTMEiAA)'
-description: 'Dr Marta Kryczka zdała egzamin z umiejętności zawodowej – Medycyna Estetyczno-Naprawcza (kod 028) w Polskim Towarzystwie Medycyny Estetycznej i Anti-Aging.'
+description: 'Zdałam egzamin z umiejętności zawodowej – Medycyna Estetyczno-Naprawcza (kod 028) w Polskim Towarzystwie Medycyny Estetycznej i Anti-Aging.'
 date: 2026-10-03
 type: 'Certyfikacja'
 location: 'Polska'
@@ -10,6 +10,6 @@ imageAlt: 'Dr Marta Kryczka – informacja o zdanym egzaminie z umiejętności z
 draft: false
 ---
 
-3 października 2026 r. dr Marta Kryczka zdała egzamin z umiejętności zawodowej **Medycyna Estetyczno-Naprawcza (kod 028)**, prowadzony w ramach Polskiego Towarzystwa Medycyny Estetycznej i Anti-Aging (PTMEiAA).
+3 października 2026 r. zdałam egzamin z umiejętności zawodowej **Medycyna Estetyczno-Naprawcza (kod 028)**, prowadzony w ramach Polskiego Towarzystwa Medycyny Estetycznej i Anti-Aging.
 
-To kolejny krok w kształceniu w obszarze medycyny estetycznej, uzupełniający wcześniejszą naukę w Derma Medical w Londynie i wieloletnią praktykę kliniczną.
+Umiejętność zawodowa to w Polsce formalna ścieżka potwierdzająca kwalifikacje lekarza w wąskiej dziedzinie, w tym przypadku w medycynie estetycznej. Egzamin jest dla mnie kolejnym krokiem w kształceniu w tym obszarze – uzupełnia naukę w Derma Medical w Londynie oraz wieloletnią praktykę kliniczną w stomatologii, ortodoncji i medycynie estetycznej.
