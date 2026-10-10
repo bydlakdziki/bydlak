@@ -10,6 +10,13 @@ const events = (await getCollection('aktualnosci', (a) => !a.data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 
+const trust = [
+  { file: 'uniwersytet-medyczny-wroclaw.svg', alt: 'Uniwersytet Medyczny we Wrocławiu' },
+  { file: 'danube-private-university.png', alt: 'Danube Private University' },
+  { file: 'derma-medical.svg', alt: 'Derma Medical' },
+  { file: 'pimik.svg', alt: 'Polski Instytut Medycyny i Kosmetologii' },
+];
+
 const sections = [
   { href: '/o-mnie/', img: 'gabinet-lekarza-dr-marta-kryczka', title: 'O mnie', text: 'Droga zawodowa, kwalifikacje i podejście do medycyny estetycznej oraz ortodoncji.' },
   { href: '/szkolenia/', img: 'szkolenia', title: 'Szkolenia', text: 'Edukacja dla lekarzy: biostymulacja, wypełniacze, toksyna botulinowa i laseroterapia.' },
@@ -28,8 +35,9 @@ const sections = [
           Wiedza, odpowiedzialne podejście do zabiegów i edukacja dla lekarzy oraz osób zainteresowanych estetyką uśmiechu.
         </p>
         <div class="actions">
-          <a class="btn" href="/o-mnie/">Poznaj moją historię</a>
-          <a class="btn ghost" href="/artykuly/">Czytaj artykuły</a>
+          <a class="btn" href="https://www.znanylekarz.pl/placowki/mei-clinic" target="_blank" rel="noopener">Umów wizytę</a>
+          <a class="btn ghost" href="/szkolenia/">Szkolenia dla lekarzy</a>
+          <a class="btn ghost" href="/o-mnie/">Poznaj moją historię</a>
         </div>
       </div>
       <img class="portrait" src="/img/hero.webp" alt="Abstrakcyjna linia profilu twarzy w beżowych tonach" width="1600" height="2000" fetchpriority="high" />
@@ -48,6 +56,17 @@ const sections = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Kształcenie i współpraca</p>
+      <h2>Skąd czerpię wiedzę</h2>
+      <div class="logo-strip">
+        {trust.map((t) => (<img src={`/img/logos/${t.file}`} alt={t.alt} loading="lazy" />))}
+      </div>
+      <p class="muted">Uniwersytet Medyczny we Wrocławiu, ortodoncja w Danube Private University, medycyna estetyczna w Derma Medical w Londynie, a od 2024 r. prowadzę szkolenia w PIMiK. Opinie pacjentów znajdziesz w profilu gabinetu na <a href="https://www.znanylekarz.pl/placowki/mei-clinic" target="_blank" rel="noopener">ZnanyLekarz</a>.</p>
     </div>
   </section>
 
@@ -89,4 +108,14 @@ const sections = [
       </div>
     </section>
   )}
+  <section class="section alt">
+    <div class="container ig-cta">
+      <div>
+        <p class="eyebrow">Instagram</p>
+        <h2>Na co dzień na Instagramie</h2>
+        <p class="muted">Relacje z konferencji, krótkie materiały edukacyjne i kulisy pracy. Zapraszam do obserwowania.</p>
+      </div>
+      <a class="btn" href="https://www.instagram.com/drmartakryczka/" target="_blank" rel="noopener">@drmartakryczka</a>
+    </div>
+  </section>
 </Base>

@@ -157,3 +157,8 @@ img.portrait { padding: 0; background: none; width: 100%; height: auto; object-f
 .form-status { padding: .8rem 1rem; border-radius: 10px; max-width: 640px; }
 .form-status.ok { background: #e8f3ea; color: #1f5a2c; }
 .form-status.err { background: #fbeaea; color: #8a2222; }
+
+.logo-strip { display: flex; flex-wrap: wrap; gap: 2rem 3rem; align-items: center; margin: 1.5rem 0; }
+.logo-strip img { height: 52px; width: auto; max-width: 180px; object-fit: contain; }
+.ig-cta { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; justify-content: space-between; }
+.hero .actions { flex-wrap: wrap; }
