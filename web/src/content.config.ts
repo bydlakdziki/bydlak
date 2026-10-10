@@ -9,6 +9,8 @@ const artykuly = defineCollection({
     description: z.string(),
     date: z.coerce.date(),
     category: z.string(),
+    image: z.string().optional(),
+    imageAlt: z.string().default(''),
     draft: z.boolean().default(false),
   }),
 });

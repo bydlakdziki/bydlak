@@ -24,6 +24,7 @@ const articles = (await getCollection('artykuly', (a) => !a.data.draft)).sort(
         <div class="grid">
           {articles.map((a) => (
             <a class="card" href={`/artykuly/${a.id}/`} style="text-decoration:none;color:inherit">
+              {a.data.image && <img class="card-img" src={a.data.image} alt={a.data.imageAlt} loading="lazy" />}
               <span class="tag">{a.data.category} · {a.data.date.toLocaleDateString('pl-PL')}</span>
               <h3>{a.data.title}</h3>
               <p>{a.data.description}</p>
