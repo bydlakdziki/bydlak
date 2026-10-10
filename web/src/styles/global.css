@@ -70,7 +70,7 @@ nav a:hover, nav a[aria-current='page'] { color: var(--accent); }
 img.portrait { padding: 0; background: none; width: 100%; height: auto; object-fit: cover; display: block; }
 .card-img {
   width: calc(100% + 3rem); margin: -1.5rem -1.5rem 1.2rem;
-  height: 130px; object-fit: cover; display: block;
+  aspect-ratio: 2 / 1; height: auto; object-fit: cover; object-position: center top; display: block;
   border-radius: var(--radius) var(--radius) 0 0;
 }
 .page-head {
@@ -132,3 +132,5 @@ img.portrait { padding: 0; background: none; width: 100%; height: auto; object-f
 
 .qual-icon { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; background: var(--surface); border: 1px solid var(--line); color: var(--accent); margin-bottom: 1rem; }
 .section.alt .qual-icon { background: var(--surface); }
+.card:has(.qual-logo) { display: flex; flex-direction: column; }
+.qual-logo { margin-top: auto; padding-top: 1.2rem; height: 3.6rem; width: auto; max-width: 100%; object-fit: contain; object-position: left bottom; align-self: flex-start; box-sizing: content-box; }
