@@ -2,11 +2,13 @@
 import Base from '../layouts/Base.astro';
 import TopicIcon from '../components/TopicIcon.astro';
 
+const clinicUrl = 'https://www.znanylekarz.pl/placowki/mei-clinic';
 const items = [
   { title: 'Biostymulacja', text: 'Metody wspierające jakość i napięcie skóry. Zakres i oczekiwania omawiane są indywidualnie podczas konsultacji.' },
   { title: 'Wypełniacze', text: 'Zabiegi modelujące proporcje twarzy, planowane z uwzględnieniem anatomii i zasady umiaru.' },
   { title: 'Toksyna botulinowa', text: 'Zabiegi stosowane m.in. w redukcji zmarszczek mimicznych; kwalifikacja zawsze poprzedza decyzję.' },
   { title: 'Laseroterapia', text: 'Metody wykorzystujące energię światła; dobór postępowania zależy od wskazań i stanu skóry.' },
+  { title: 'Osocze bogatopłytkowe i fibryna bogatopłytkowa', text: 'Preparaty autologiczne, czyli uzyskiwane z krwi pacjenta, wykorzystywane do wspierania regeneracji i jakości skóry. Wskazania i technikę ocenia się indywidualnie.' },
   { title: 'Kwas polimlekowy', text: 'Biostymulator tkankowy, który stopniowo pobudza skórę do produkcji własnego kolagenu. Efekt narasta z czasem, a plan postępowania zależy od wskazań i budowy tkanek.' },
   { title: 'Hydroksyapatyt wapnia', text: 'Preparat o właściwościach biostymulujących i podporowych. Dobór techniki i miejsca podania zależy od jakości skóry oraz anatomii.' },
   { title: 'Enzymy rekombinowane', text: 'Preparaty enzymatyczne stosowane m.in. do rozpuszczania wypełniaczy oraz w pracy z tkanką łączną. Wskazania ocenia się indywidualnie.' },
@@ -17,12 +19,14 @@ const items = [
 ];
 ---
 
-<Base title="Medycyna estetyczna i Invisalign" description="Rzetelne informacje o metodach medycyny estetycznej i ortodoncji: biostymulatory, wypełniacze, toksyna botulinowa, nici, mezoterapia, laseroterapia, leczenie nakładkami Invisalign.">
+<Base title="Medycyna estetyczna i Invisalign" description="Rzetelne informacje o metodach medycyny estetycznej i ortodoncji, zabiegi we Wrocławiu: biostymulatory, wypełniacze, toksyna botulinowa, nici, mezoterapia, laseroterapia, leczenie nakładkami Invisalign.">
   <section class="page-head">
     <div class="container">
       <p class="eyebrow">Zabiegi</p>
       <h1>Zabiegi w odpowiedzialnym ujęciu</h1>
       <p class="lead">Rzetelne informacje o metodach. Nie każdy zabieg jest dla każdego, a kwalifikacja zawsze odbywa się podczas konsultacji.</p>
+      <p class="lead"><strong>Miejsce wykonywania zabiegów:</strong> Wrocław.</p>
+      <p><a class="btn" href={clinicUrl} target="_blank" rel="noopener">Umów wizytę w ZnanyLekarz</a></p>
     </div>
   </section>
 
@@ -39,7 +43,9 @@ const items = [
 
   <section class="section">
     <div class="container prose">
-      <p class="notice">Opisy mają charakter wyłącznie informacyjny. Nie zawierają obietnic efektów, cen ani zachęt promocyjnych. Teksty i ewentualne zdjęcia przed publikacją należy zatwierdzić pod kątem zasad etyki lekarskiej oraz przepisów o reklamie.</p>
+      <p>Zabiegi wykonuję we Wrocławiu. Wizytę można zarezerwować przez zewnętrzny serwis ZnanyLekarz.</p>
+      <p><a class="btn ghost" href={clinicUrl} target="_blank" rel="noopener">Rezerwacja w ZnanyLekarz</a></p>
+      <p class="notice">Opisy mają charakter wyłącznie informacyjny i nie stanowią porady medycznej. Nie zawierają obietnic efektów. Każdy zabieg poprzedza konsultacja i kwalifikacja.</p>
     </div>
   </section>
 </Base>
