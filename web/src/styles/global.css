@@ -162,3 +162,8 @@ img.portrait { padding: 0; background: none; width: 100%; height: auto; object-f
 .logo-strip img { height: 52px; width: auto; max-width: 180px; object-fit: contain; }
 .ig-cta { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; justify-content: space-between; }
 .hero .actions { flex-wrap: wrap; }
+
+.vision h2 { max-width: 22ch; }
+.vision-lead { font-size: 1.2rem; max-width: 62ch; color: var(--ink); }
+.vision-grid { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 1.5rem 0; }
+.vision-grid .card { border-left: 3px solid var(--accent); }

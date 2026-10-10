@@ -10,6 +10,8 @@ const events = (await getCollection('aktualnosci', (a) => !a.data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 
+const nb = (t: string) => t.replace(/(^|[\s(])([wziouaWZIOUA])\s/g, '$1$2\u00a0').replace(/(^|[\s(])([wziouaWZIOUA])\s/g, '$1$2\u00a0');
+
 const trust = [
   { file: 'uniwersytet-medyczny-wroclaw.svg', alt: 'Uniwersytet Medyczny we Wrocławiu' },
   { file: 'danube-private-university.png', alt: 'Danube Private University' },
@@ -44,13 +46,21 @@ const sections = [
     </div>
   </section>
 
-  <section class="section">
-    <div class="container prose">
+  <section class="section vision">
+    <div class="container">
       <p class="eyebrow">Moja wizja</p>
       <h2>Piękno, które zaczyna się od bezpieczeństwa</h2>
-      <p>Patrzę na pacjenta całościowo. Łączę ortodontyczne spojrzenie na struktury kostne twarzy z troską o regenerację tkanek miękkich, bo harmonia twarzy zależy od jednego i drugiego.</p>
-      <p>Wiem, jak ważne jest poczucie bezpieczeństwa, ponieważ sama byłam pacjentką onkologiczną. Dlatego bezpieczeństwo zabiegowe stawiam na pierwszym miejscu. Mam doświadczenie w planowaniu leczenia dla osób po chorobach nowotworowych i z zespołami autoimmunologicznymi.</p>
-      <p>Szczególnie zapraszam osoby po radioterapii i chemioterapii, które chcą zadbać o swój wygląd w sposób przemyślany i bezpieczny. Każdy plan powstaje indywidualnie, po rozmowie i kwalifikacji, a o jego zakresie decyduje stan zdrowia.</p>
+      <p class="vision-lead">{nb('Patrzę na pacjenta całościowo: łączę ortodontyczne spojrzenie na struktury kostne twarzy z troską o regenerację tkanek miękkich, bo harmonia twarzy zależy od jednego i drugiego.')}</p>
+      <div class="vision-grid">
+        <div class="card">
+          <h3>{nb('Bezpieczeństwo przede wszystkim')}</h3>
+          <p>{nb('Wiem, jak ważne jest poczucie bezpieczeństwa, ponieważ sama byłam pacjentką onkologiczną. Mam doświadczenie w planowaniu leczenia dla osób po chorobach nowotworowych i z zespołami autoimmunologicznymi.')}</p>
+        </div>
+        <div class="card">
+          <h3>{nb('Zapraszam szczególnie')}</h3>
+          <p>{nb('Osoby po radioterapii i chemioterapii, które chcą zadbać o swój wygląd w sposób przemyślany i bezpieczny. Każdy plan powstaje indywidualnie, po rozmowie i kwalifikacji, a o jego zakresie decyduje stan zdrowia.')}</p>
+        </div>
+      </div>
       <p><a class="btn" href="/kontakt/">Napisz do mnie</a></p>
     </div>
   </section>
