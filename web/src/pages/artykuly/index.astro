@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('artykuly', (a) => !a.data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Base title="Artykuły" description="Artykuły edukacyjne dr Marty Kryczki o medycynie estetycznej i ortodoncji.">
+  <section class="page-head">
+    <div class="container">
+      <p class="eyebrow">Artykuły</p>
+      <h1>Wiedza w praktyce</h1>
+      <p class="lead">Edukacyjne teksty o medycynie estetycznej i ortodoncji.</p>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="container"><img class="banner" src="/img/artykuly.webp" alt="Notatnik, okulary i roślina na beżowym blacie" width="1600" height="900" /></div>
+    <div class="container">
+      {articles.length === 0 ? (
+        <p class="muted">Pierwsze artykuły pojawią się wkrótce.</p>
+      ) : (
+        <div class="grid">
+          {articles.map((a) => (
+            <a class="card" href={`/artykuly/${a.id}/`} style="text-decoration:none;color:inherit">
+              <span class="tag">{a.data.category} · {a.data.date.toLocaleDateString('pl-PL')}</span>
+              <h3>{a.data.title}</h3>
+              <p>{a.data.description}</p>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Base>

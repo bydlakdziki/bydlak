@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const latest = (await getCollection('artykuly', (a) => !a.data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const sections = [
+  { href: '/o-mnie/', img: 'karta', title: 'O mnie', text: 'Droga zawodowa, kwalifikacje i podejście do medycyny estetycznej oraz ortodoncji.' },
+  { href: '/szkolenia/', img: 'szkolenia', title: 'Szkolenia', text: 'Edukacja dla lekarzy: biostymulacja, wypełniacze, toksyna botulinowa i laseroterapia.' },
+  { href: '/zabiegi/', img: 'zabiegi', title: 'Zabiegi', text: 'Informacje o metodach, wskazaniach i ograniczeniach stosowanych w praktyce.' },
+  { href: '/artykuly/', img: 'artykuly', title: 'Artykuły', text: 'Rzetelnie o medycynie estetycznej i ortodoncji.' },
+];
+---
+
+<Base title="dr Marta Kryczka – medycyna estetyczna i ortodoncja">
+  <section class="hero">
+    <div class="container">
+      <div>
+        <p class="eyebrow">Lekarz dentysta · Wrocław</p>
+        <h1>Medycyna estetyczna i ortodoncja z myślą o harmonii twarzy</h1>
+        <p class="lead">
+          Wiedza, odpowiedzialne podejście do zabiegów i edukacja dla lekarzy oraz osób zainteresowanych estetyką uśmiechu.
+        </p>
+        <div class="actions">
+          <a class="btn" href="/o-mnie/">Poznaj moją historię</a>
+          <a class="btn ghost" href="/artykuly/">Czytaj artykuły</a>
+        </div>
+      </div>
+      <img class="portrait" src="/img/hero.webp" alt="Abstrakcyjna linia profilu twarzy w beżowych tonach" width="1600" height="2000" fetchpriority="high" />
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="grid">
+        {sections.map((s) => (
+          <div class="card">
+            <img class="card-img" src={`/img/${s.img}.webp`} alt="" width="1200" height="720" loading="lazy" />
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+            <a class="more" href={s.href}>Przejdź →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {latest.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Wiedza</p>
+        <h2>Najnowsze artykuły</h2>
+        <div class="grid">
+          {latest.map((a) => (
+            <a class="card" href={`/artykuly/${a.id}/`} style="text-decoration:none;color:inherit">
+              <span class="tag">{a.data.category}</span>
+              <h3>{a.data.title}</h3>
+              <p>{a.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Base>
