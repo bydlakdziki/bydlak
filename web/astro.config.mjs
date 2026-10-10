@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  // Po wyborze domeny ustaw ją tutaj, aby poprawnie działały adresy kanoniczne.
   site: 'https://drmartakryczka.pl',
+  trailingSlash: 'always',
+  integrations: [sitemap({ filter: (page) => !page.includes('/404') })],
 });

@@ -11,7 +11,26 @@ const { article } = Astro.props;
 const { Content } = await render(article);
 ---
 
-<Base title={article.data.title} description={article.data.description}>
+<Base
+  title={article.data.title}
+  description={article.data.description}
+  image={article.data.image}
+  imageAlt={article.data.imageAlt}
+  type="article"
+  published={article.data.date}
+  jsonLd={[{
+    '@type': 'Article',
+    headline: article.data.title,
+    description: article.data.description,
+    datePublished: article.data.date.toISOString(),
+    dateModified: article.data.date.toISOString(),
+    inLanguage: 'pl-PL',
+    image: article.data.image ? new URL(article.data.image, Astro.site).href : undefined,
+    mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+    author: { '@id': 'https://drmartakryczka.pl/#person' },
+    publisher: { '@id': 'https://drmartakryczka.pl/#person' },
+  }]}
+>
   <article class="section">
     <div class="container prose">
       <p class="eyebrow">{article.data.category} · {article.data.date.toLocaleDateString('pl-PL')}</p>
