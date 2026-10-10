@@ -2,17 +2,19 @@
 import Base from '../layouts/Base.astro';
 
 const qualifications = [
-  { title: 'Lekarz dentysta', text: 'Uniwersytet Medyczny we Wrocławiu (wcześniej Akademia Medyczna), studia stomatologiczne 2004–2011, staż podyplomowy 2011–2012.' },
+  { title: 'Lekarz dentysta', text: 'Wydział Lekarsko-Stomatologiczny Uniwersytetu Medycznego we Wrocławiu (2004–2011), staż podyplomowy 2011–2012.' },
   { title: 'Ortodoncja', text: 'Master of Science in Orthodontics, Danube Private University w Krems (Austria), 2017–2020. Praktyka w leczeniu nakładkami Invisalign.' },
-  { title: 'Medycyna estetyczna', text: 'Level 7 Facial Aesthetic Therapies, Derma Medical w Londynie, 2021–2023.' },
-  { title: 'Edukacja', text: 'Trener medycyny estetycznej twarzy w Polskim Instytucie Medycyny i Kosmetologii (od 2024). Wcześniej trener medyczny w 2024 roku.' },
+  { title: 'Medycyna estetyczna', text: 'Level 7 Facial Aesthetic Therapies, Derma Medical w Londynie (2021–2023). Następnie egzaminator wewnętrzny, odpowiedzialny za certyfikację i ocenę kompetencji innych lekarzy.' },
+  { title: 'Edukacja', text: 'Trener medycyny estetycznej twarzy w Polskim Instytucie Medycyny i Kosmetologii (od 2024).' },
 ];
 
+const treatments = ['toksyna botulinowa', 'biostymulacja', 'terapie enzymatyczne', 'wolumetria', 'modelowanie ust'];
+
 const career = [
-  { years: 'od 2014', text: 'Unique Smile, własna praktyka (medycyna estetyczna)' },
+  { years: 'od 2014', text: 'Unique Smile Center, własna praktyka (medycyna estetyczna)' },
   { years: 'od 2024', text: 'Polski Instytut Medycyny i Kosmetologii, trener medycyny estetycznej twarzy' },
   { years: 'od 2024', text: 'Lekarz ortodonta, leczenie nakładkami Invisalign' },
-  { years: '2014–2023', text: 'Lekarz dentysta (praktyka prywatna i NHS) w Wielkiej Brytanii' },
+  { years: '2014–2023', text: 'Lekarz dentysta (praktyka prywatna i NHS), hrabstwo East Sussex, Wielka Brytania' },
   { years: '2012–2014', text: 'Lekarz dentysta w praktyce prywatnej we Wrocławiu' },
 ];
 ---
@@ -22,7 +24,7 @@ const career = [
     <div class="container">
       <p class="eyebrow">O mnie</p>
       <h1>dr Marta Kryczka</h1>
-      <p class="lead">Lekarz dentysta łączący ortodoncję i medycynę estetyczną. Pracuję we Wrocławiu i dzielę się wiedzą z lekarzami w całej Polsce.</p>
+      <p class="lead">Lekarz dentysta łączący ortodoncję i medycynę estetyczną. Patrzę na twarz kompleksowo, a wiedzą dzielę się z lekarzami w całej Polsce.</p>
     </div>
   </section>
 
@@ -31,8 +33,10 @@ const career = [
       <img class="about-photo" src="/img/dr-marta-kryczka-lekarz-dentysta-wroclaw.webp" width="900" height="1350" alt="dr Marta Kryczka – lekarz dentysta, ortodoncja i medycyna estetyczna, Wrocław" />
       <div class="prose">
         <h2>Moje podejście</h2>
-        <p>Jestem lekarzem dentystą. Pracowałam we Wrocławiu i przez prawie dekadę w Wielkiej Brytanii, w praktyce prywatnej i w ramach NHS. Z tego doświadczenia wynika podejście, w którym liczy się solidna diagnostyka, szczera rozmowa o możliwościach i ograniczeniach oraz umiar.</p>
-        <p>Łączę ortodoncję z medycyną estetyczną twarzy, bo uśmiech jest częścią całości. Prowadzę własną praktykę Unique Smile i uczę innych lekarzy.</p>
+        <p>Nazywam się Marta Kryczka. Jestem absolwentką Wydziału Lekarsko-Stomatologicznego Uniwersytetu Medycznego we Wrocławiu. Ortodoncję studiowałam na Danube Private University w Krems w Austrii, a kompetencje w medycynie estetycznej poszerzyłam w Derma Medical w Londynie. Tam objęłam funkcję egzaminatora wewnętrznego, odpowiadając za proces certyfikacji i ocenę kompetencji innych lekarzy.</p>
+        <p>Przez ostatnie 10 lat pracowałam w hrabstwie East Sussex na południu Anglii, gdzie prowadziłam również własną praktykę, Unique Smile Center. Wieloletnie doświadczenie w stomatologii, ortodoncji i medycynie estetycznej pozwala mi patrzeć na twarz w sposób kompleksowy.</p>
+        <p>W swojej pracy szczególną uwagę poświęcam harmonii i proporcjom twarzy, uwzględniając zarówno zmiany związane ze starzeniem, jak i wpływ wad zgryzu na estetykę oraz funkcję tkanek.</p>
+        <p>W klinice wykonuję zabiegi z zakresu: {treatments.join(', ')}. Do każdego pacjenta podchodzę indywidualnie i holistycznie, biorąc pod uwagę jego potrzeby i oczekiwania.</p>
         <p>Mówię po polsku i po angielsku (poziom C2).</p>
       </div>
     </div>

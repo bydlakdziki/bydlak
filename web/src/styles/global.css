@@ -101,6 +101,7 @@ img.portrait { padding: 0; background: none; width: 100%; height: auto; object-f
   color: var(--muted); font-size: .95rem;
 }
 .prose { max-width: 70ch; }
+.prose table { max-width: 100%; }
 .prose h2 { margin-top: 2rem; }
 .page-head { padding: 4rem 0 2rem; }
 .banner { width: 100%; height: clamp(180px, 30vw, 340px); object-fit: cover; border-radius: var(--radius); display: block; margin-bottom: 2rem; }
@@ -115,3 +116,8 @@ img.portrait { padding: 0; background: none; width: 100%; height: auto; object-f
 .about { display: grid; grid-template-columns: minmax(0, 340px) 1fr; gap: 2.5rem; align-items: start; }
 .about-photo { width: 100%; height: auto; border-radius: var(--radius); display: block; }
 @media (max-width: 720px) { .about { grid-template-columns: 1fr; } .about-photo { max-width: 320px; } }
+
+.prose img { max-width: 100%; height: auto; border-radius: 12px; margin: 1.5rem 0 .5rem; }
+.prose table { width: 100%; border-collapse: collapse; font-size: .85rem; display: block; overflow-x: auto; }
+.prose th, .prose td { border: 1px solid rgba(0,0,0,.12); padding: .5rem; text-align: left; vertical-align: top; }
+.prose th { background: rgba(0,0,0,.04); }

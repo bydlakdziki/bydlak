@@ -16,6 +16,7 @@ const { Content } = await render(article);
     <div class="container prose">
       <p class="eyebrow">{article.data.category} · {article.data.date.toLocaleDateString('pl-PL')}</p>
       <h1>{article.data.title}</h1>
+      {article.data.image && <img class="banner" src={article.data.image} alt={article.data.imageAlt} width="1600" height="900" />}
       <Content />
       <p><a href="/artykuly/">← Wszystkie artykuły</a></p>
     </div>
