@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import TopicIcon from '../components/TopicIcon.astro';
 
 const items = [
   { title: 'Biostymulacja', text: 'Metody wspierające jakość i napięcie skóry. Zakres i oczekiwania omawiane są indywidualnie podczas konsultacji.' },
@@ -24,7 +25,7 @@ const items = [
     <div class="container">
       <div class="grid">
         {items.map((i) => (
-          <div class="card"><h3>{i.title}</h3><p>{i.text}</p></div>
+          <div class="card"><TopicIcon name={i.title} /><h3>{i.title}</h3><p>{i.text}</p></div>
         ))}
       </div>
     </div>
