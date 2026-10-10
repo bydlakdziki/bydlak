@@ -1,0 +1,11 @@
+---
+const { name } = Astro.props;
+const paths: Record<string, string> = {
+  'Biostymulacja': '<circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>',
+  'Wypełniacze': '<path d="M12 3c3 4 6 7 6 10.5a6 6 0 0 1-12 0C6 10 9 7 12 3z"/><path d="M9.5 14a2.5 2.5 0 0 0 2.5 2.5"/>',
+  'Toksyna botulinowa': '<path d="M4 20l7-7"/><path d="M14 4l6 6-3 3-6-6z"/><path d="M11 13l-3-3M18 2l4 4"/>',
+  'Laseroterapia': '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+  'Ortodoncja i Invisalign': '<path d="M3 13c3 5 15 5 18 0"/><path d="M5 12v-2h3v2M10.5 12v-2h3v2M16 12v-2h3v2"/><path d="M3 13c3-3 15-3 18 0"/>',
+};
+---
+<span class="qual-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" set:html={paths[name]} /></span>
