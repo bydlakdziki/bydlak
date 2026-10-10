@@ -16,6 +16,7 @@ const articles = (await getCollection('artykuly', (a) => !a.data.draft)).sort(
     </div>
   </section>
   <section class="section alt">
+    <div class="container"><img class="banner" src="/img/artykuly.webp" alt="Notatnik, okulary i roślina na beżowym blacie" width="1600" height="900" /></div>
     <div class="container">
       {articles.length === 0 ? (
         <p class="muted">Pierwsze artykuły pojawią się wkrótce.</p>

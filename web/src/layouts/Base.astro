@@ -29,6 +29,7 @@ const fullTitle = path === '/' ? title : `${title} | dr Marta Kryczka`;
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:locale" content="pl_PL" />
+    <meta property="og:image" content={new URL('/img/og.webp', Astro.site)} />
   </head>
   <body>
     <header class="site-header">
