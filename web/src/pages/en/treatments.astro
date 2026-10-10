@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import TopicIcon from '../../components/TopicIcon.astro';
+
+const clinicUrl = 'https://www.znanylekarz.pl/placowki/mei-clinic';
+const devices = [
+  {
+    name: 'Dermisonic 2',
+    tagline: 'Ultrasound, radiofrequency and LED',
+    text: 'Dermisonic 2 is a device that combines ultrasound micromassage, radiofrequency and LED light. It gently stimulates the skin, supports circulation and improves the absorption of active substances applied during the treatment.',
+    points: ['Micromassage and gentle warming of tissues', 'LED light chosen to suit the skin’s needs', 'Comfortable course, no anaesthesia'],
+    image: '/img/urzadzenia/dermisonic-2.webp',
+  },
+  {
+    name: 'Synergy Marble Eye',
+    tagline: 'Care for the delicate eye area',
+    text: 'Synergy Marble Eye is designed for the eye area, where the skin is at its thinnest. It combines LED light, micro-vibrations and alternating warmth and cool, making the treatment relaxing and a good complement to work on regenerating this area.',
+    points: ['Gentle warmth and cool from a quartz head', 'Red and green LED light', 'Treatment focused on the eye area'],
+    image: '/img/urzadzenia/synergy-marble-eye.webp',
+  },
+];
+const items = [
+  { title: 'Biostimulation', icon: 'Biostymulacja', text: 'Methods that support skin quality and firmness. The scope and expectations are discussed individually during the consultation.' },
+  { title: 'Fillers', icon: 'Wypełniacze', text: 'Treatments that shape facial proportions, planned with anatomy and moderation in mind.' },
+  { title: 'Botulinum toxin', icon: 'Toksyna botulinowa', text: 'Treatments used, among other things, to reduce expression lines; qualification always comes before the decision.' },
+  { title: 'Laser therapy', icon: 'Laseroterapia', text: 'Methods using light energy; the choice of approach depends on indications and the condition of the skin.' },
+  { title: 'Platelet-rich plasma and platelet-rich fibrin', icon: 'Osocze bogatopłytkowe i fibryna bogatopłytkowa', text: 'Autologous preparations, i.e. obtained from the patient’s own blood, used to support regeneration and skin quality. Indications and technique are assessed individually.' },
+  { title: 'Polylactic acid', icon: 'Kwas polimlekowy', text: 'A tissue biostimulator that gradually stimulates the skin to produce its own collagen. The effect builds over time, and the plan depends on indications and tissue structure.' },
+  { title: 'Calcium hydroxyapatite', icon: 'Hydroksyapatyt wapnia', text: 'A product with biostimulating and supporting properties. The choice of technique and injection site depends on skin quality and anatomy.' },
+  { title: 'Recombinant enzymes', icon: 'Enzymy rekombinowane', text: 'Enzymatic preparations used, among other things, to dissolve fillers and in work with connective tissue. Indications are assessed individually.' },
+  { title: 'Booster threads', icon: 'Nici booster', text: 'Fine threads placed in the skin that improve its firmness and quality. Qualification includes assessment of anatomy, tissue positioning and expectations.' },
+  { title: 'Mesotherapy', icon: 'Mezoterapia', text: 'Micro-injections of active substances into the skin to improve its condition. The composition and technique are chosen to suit the skin’s needs.' },
+  { title: 'Tropocollagen', icon: 'Tropokolagen', text: 'The basic molecule from which collagen fibres are built. In aesthetic medicine it is discussed in the context of supporting skin structure.' },
+  { title: 'Invisalign orthodontic treatment', icon: 'Leczenie ortodontyczne Invisalign', text: 'Treatment of malocclusion with aligners or other appliances, taking facial and smile proportions into account.' },
+];
+---
+
+<Base title="Aesthetic medicine and Invisalign" description="Reliable information on aesthetic medicine and orthodontic methods, treatments in Wrocław: biostimulators, fillers, botulinum toxin, threads, mesotherapy, laser therapy, Invisalign aligner treatment.">
+  <section class="page-head">
+    <div class="container">
+      <p class="eyebrow">Treatments</p>
+      <h1>Treatments, approached responsibly</h1>
+      <p class="lead">Reliable information on methods. Not every treatment is for everyone, and qualification always takes place during a consultation.</p>
+      <p class="lead"><strong>Where I treat:</strong> Wrocław, Poland.</p>
+      <p><a class="btn" href={clinicUrl} target="_blank" rel="noopener">Book a visit on ZnanyLekarz</a></p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container"><img class="banner" src="/img/zabiegi.webp" alt="A calm aesthetic medicine clinic" width="1920" height="1080" /></div>
+    <div class="container">
+      <div class="grid">
+        {items.map((i) => (
+          <div class="card"><TopicIcon name={i.icon} /><h3>{i.title}</h3><p>{i.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Devices</p>
+      <h2>Technologies I use</h2>
+      <p class="lead">Device-based treatments are non-invasive and can complement other methods. The choice of technology is always preceded by a consultation.</p>
+      <div class="device-list">
+        {devices.map((d) => (
+          <article class="device">
+            {d.image && <img class="device-img" src={d.image} alt={d.name} loading="lazy" />}
+            <div class="device-body">
+              <h3>{d.name}</h3>
+              <p class="tag">{d.tagline}</p>
+              <p>{d.text}</p>
+              <ul>{d.points.map((p) => <li>{p}</li>)}</ul>
+              <a class="btn" href={clinicUrl} target="_blank" rel="noopener">Book a visit</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container prose">
+      <p>I treat patients in Wrocław, Poland. Visits can be booked through the external ZnanyLekarz service (in Polish).</p>
+      <p><a class="btn ghost" href={clinicUrl} target="_blank" rel="noopener">Booking on ZnanyLekarz</a></p>
+      <p class="notice">These descriptions are for information only and do not constitute medical advice. They contain no promises of results. Every treatment is preceded by a consultation and qualification.</p>
+    </div>
+  </section>
+</Base>

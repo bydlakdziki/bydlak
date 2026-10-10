@@ -1,7 +1,8 @@
 <?php
 // Formularz kontaktowy: wysyła wiadomość na adres lekarza.
 $to = 'drmartakryczka@gmail.com';
-$back = '/kontakt/';
+$isEn = (($_POST['lang'] ?? '') === 'en');
+$back = $isEn ? '/en/contact/' : '/kontakt/';
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { header('Location: ' . $back); exit; }
 
 function clean($v, $max) {
@@ -22,7 +23,7 @@ if ($name === '' || $message === '' || !$consent || !filter_var($email, FILTER_V
 }
 
 $host = preg_replace('/[^a-z0-9.-]/i', '', $_SERVER['HTTP_HOST'] ?? 'drmartakryczka.pl');
-$mailSubject = '=?UTF-8?B?' . base64_encode('Formularz strony: ' . ($subject !== '' ? $subject : 'wiadomość')) . '?=';
+$mailSubject = '=?UTF-8?B?' . base64_encode('Formularz strony: ' . ($subject !== '' ? $subject : ($isEn ? 'message (EN)' : 'wiadomość'))) . '?=';
 $body = "Imię i nazwisko: $name\nE-mail: $email\n\n$message\n";
 $headers = [
     'From: Strona drmartakryczka.pl <formularz@' . $host . '>',

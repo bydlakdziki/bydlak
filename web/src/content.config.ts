@@ -30,4 +30,13 @@ const aktualnosci = defineCollection({
   }),
 });
 
-export const collections = { artykuly, aktualnosci };
+const artykulyEn = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/en/artykuly' }),
+  schema: artykuly.schema,
+});
+const aktualnosciEn = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/en/aktualnosci' }),
+  schema: aktualnosci.schema,
+});
+
+export const collections = { artykuly, aktualnosci, 'artykuly-en': artykulyEn, 'aktualnosci-en': aktualnosciEn };
