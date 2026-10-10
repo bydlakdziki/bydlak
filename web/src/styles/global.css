@@ -112,3 +112,6 @@ img.portrait { padding: 0; background: none; width: 100%; height: auto; object-f
   .hero .container { grid-template-columns: 1fr; }
   .hero { padding-top: 3rem; }
 }
+.about { display: grid; grid-template-columns: minmax(0, 340px) 1fr; gap: 2.5rem; align-items: start; }
+.about-photo { width: 100%; height: auto; border-radius: var(--radius); display: block; }
+@media (max-width: 720px) { .about { grid-template-columns: 1fr; } .about-photo { max-width: 320px; } }
