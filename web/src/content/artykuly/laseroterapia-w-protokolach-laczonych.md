@@ -106,21 +106,13 @@ Na slajdzie kongresowym odnoszącym się do tej publikacji przedstawiono praktyc
 
 | Połączenie | Najważniejsze dane | Preferowana sekwencja | Odstęp praktyczny | Poziom pewności |
 |---|---|---|---|---|
-
 | BoNT-A + nieablacyjny laser/IPL/RF | Brak utraty skuteczności po ekspozycji ≤10 min po iniekcji; 0,2% ptozy w dużej serii same-day z 1550/1927 nm. | Możliwa ta sama sesja; przy laserze po toksynie unikać agresywnego ucisku/masażu. | 0 dni w wybranych protokołach; alternatywnie rozdzielenie wg tolerancji. | Umiarkowana dla wybranych urządzeń; nie ekstrapolować na wszystkie EBD. |
-
 | BoNT-A + ablacyjny resurfacing | Badania małe, ale wykazały dodatkową poprawę po wstępnej BoNT-A. | BoNT-A przed resurfacingiem jest protokołem z badań. | Około 1–6 tygodni w opublikowanych badaniach. | Niska–umiarkowana; małe próby. |
-
 | HA + IPL/Nd:YAG/1540 nm | W modelu świńskim brak histologicznej interakcji z HA. | Możliwe łączenie po ocenie płaszczyzny depozytu. | Brak uniwersalnego odstępu opartego na RCT. | Niska dla praktyki klinicznej (dane przedkliniczne). |
-
 | HA + głęboki Er:YAG 2940/DeepFX CO2 | Kolumny ablacji mogą kontaktować się z HA. | Preferencyjnie laser → HA po wygojeniu. | Do ustąpienia ostrego odczynu i odbudowy bariery. | Niska–umiarkowana mechanistycznie. |
-
 | PLLA + IPL | Retrospektywna seria 90 pacjentów; IPL bezpośrednio przed lub od 6. dnia po PLLA. | IPL → PLLA jest najprostsze; krótki odstęp po PLLA możliwy dla IPL. | 0 dni przed; ≥6 dni po w badanej serii. | Umiarkowana dla IPL; niska dla innych EBD. |
-
 | CaHA + FACL CO2 | Najlepsze wyniki w badaniu 352 pacjentów dla kombinacji w oddzielnych sesjach. | Oddzielne sesje; unikać rutynowego same-day przy głębokiej ablacji. | W materiale kongresowym: CaHA 2–4 tyg. przed EBD; publikacja nie ustala uniwersalnego odstępu. | Umiarkowana dla blizn potrądzikowych. |
-
 | PCL + EBD | Zalecenia głównie konsensusowe. | Rozdzielić fazę EBD i biostymulacji. | Materiał kongresowy: EBD 6–8 tyg. przed lub 8–12 tyg. po PCL. | Niska; konsensus/ekspercka praktyka. |
-
 
 *Uwaga: tabela ma charakter praktycznej syntezy dowodów z omawianych publikacji i materiałów kongresowych; nie stanowi instrukcji użycia konkretnego produktu lub urządzenia.*
 
