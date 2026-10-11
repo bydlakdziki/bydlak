@@ -1,0 +1,66 @@
+---
+import { portfolio } from '../data/portfolio';
+
+interface Props {
+  lang: 'pl' | 'en';
+}
+const { lang } = Astro.props;
+const isEn = lang === 'en';
+---
+
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow">Portfolio</p>
+    <h1>{isEn ? 'Treatment documentation' : 'Dokumentacja zabiegów'}</h1>
+    <p class="lead">{isEn
+      ? 'I present selected examples of my work in aesthetic medicine and treatment of the temporomandibular joint.'
+      : 'Przedstawiam wybrane przykłady mojej pracy w medycynie estetycznej i leczeniu stawu skroniowo-żuchwowego.'}</p>
+    <p class="notice">{isEn
+      ? 'Photographs are published with patient consent. They show individual cases before and after treatment, not a guarantee of results. Lighting, facial expression and camera angle may differ. Photographs alone do not establish the effectiveness of treatment. Treatment always requires an individual consultation.'
+      : 'Zdjęcia publikuję za zgodą pacjentów. Przedstawiają indywidualne przypadki przed i po zabiegach, a nie gwarancję rezultatów. Oświetlenie, mimika i kąt wykonania zdjęć mogą się różnić. Same fotografie nie stanowią oceny skuteczności leczenia. Każdy zabieg wymaga indywidualnej konsultacji.'}</p>
+    <nav class="portfolio-topics" aria-label={isEn ? 'Portfolio topics' : 'Tematy portfolio'}>
+      {portfolio.map((item) => <a href={`#${item.id}`}>{item[lang].title}</a>)}
+    </nav>
+  </div>
+</section>
+
+<div class="container portfolio-list">
+  {portfolio.map((item) => (
+    <section id={item.id} class="portfolio-case" aria-labelledby={`${item.id}-title`}>
+      <h2 id={`${item.id}-title`}>{item[lang].title}</h2>
+      <p class="lead">{item[lang].description}</p>
+      <div class="portfolio-photos">
+        {item.slides.map((slide, index) => (
+          <figure>
+            <a href={`/img/portfolio/slide-${slide}.webp`} target="_blank" rel="noopener"
+              aria-label={isEn ? `Enlarge: ${item.en.title}, photograph ${index + 1}` : `Powiększ: ${item.pl.title}, zdjęcie ${index + 1}`}>
+              <img
+                src={`/img/portfolio/slide-${slide}.webp`}
+                srcset={`/img/portfolio/slide-${slide}-small.webp 640w, /img/portfolio/slide-${slide}.webp 1200w`}
+                sizes="(max-width: 720px) calc(100vw - 2.5rem), (max-width: 1120px) calc((100vw - 4rem) / 2), 528px"
+                width="1200" height="962" loading="lazy" decoding="async"
+                alt={isEn ? `${item.en.title}: before and after treatment, photograph ${index + 1}` : `${item.pl.title}: dokumentacja przed i po zabiegu, zdjęcie ${index + 1}`} />
+            </a>
+            <figcaption>
+              {isEn ? 'Before and after · ' : 'Przed i po · '}
+              <a href={`/img/portfolio/slide-${slide}.webp`} target="_blank" rel="noopener">{isEn ? 'Enlarge photograph' : 'Powiększ zdjęcie'}</a>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  ))}
+</div>
+
+<style>
+  .portfolio-topics { display: flex; flex-wrap: wrap; gap: .6rem; margin: 2rem 0 1rem; }
+  .portfolio-topics a { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: .4rem .9rem; }
+  .portfolio-list { padding-block: 1rem 4rem; }
+  .portfolio-case { padding-block: 2.5rem; border-bottom: 1px solid var(--line); scroll-margin-top: 12rem; }
+  .portfolio-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+  figure { margin: 0; min-width: 0; }
+  img { display: block; width: 100%; height: auto; border-radius: var(--radius); background: white; }
+  figcaption { padding-block: .75rem; color: var(--muted); font-size: .9rem; }
+  a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 4px; }
+  @media (max-width: 720px) { .portfolio-photos { grid-template-columns: 1fr; } .portfolio-case { scroll-margin-top: 15rem; } }
+</style>
