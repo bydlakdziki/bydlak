@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import BookingLinks from '../../components/BookingLinks.astro';
 ---
 
 <Base title="Contact" description="Contact dr Marta Kryczka: questions about collaboration, training and treatments. Contact form.">
@@ -7,7 +8,8 @@ import Base from '../../layouts/Base.astro';
     <div class="container">
       <p class="eyebrow">Contact</p>
       <h1>Write to me</h1>
-      <p class="lead">Have a question about training, collaboration or treatments? Send a message and I will reply as soon as I can. You can also book a visit via <a href="https://www.znanylekarz.pl/placowki/mei-clinic" target="_blank" rel="noopener">ZnanyLekarz</a> (in Polish).</p>
+      <p class="lead">Have a question about training, collaboration or treatments? Send a message and I will reply as soon as I can. You can also book a visit at one of two locations in Wrocław:</p>
+      <BookingLinks lang="en" />
     </div>
   </section>
 

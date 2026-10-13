@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import TopicIcon from '../components/TopicIcon.astro';
+import BookingLinks from '../components/BookingLinks.astro';
 
 const clinicUrl = 'https://www.znanylekarz.pl/placowki/mei-clinic';
 const devices = [
@@ -42,7 +43,7 @@ const items = [
       <h1>Zabiegi w odpowiedzialnym ujęciu</h1>
       <p class="lead">Rzetelne informacje o metodach. Nie każdy zabieg jest dla każdego, a kwalifikacja zawsze odbywa się podczas konsultacji.</p>
       <p class="lead"><strong>Miejsce wykonywania zabiegów:</strong> Wrocław.</p>
-      <p><a class="btn" href={clinicUrl} target="_blank" rel="noopener">Umów wizytę w ZnanyLekarz</a></p>
+      <BookingLinks lang="pl" />
     </div>
   </section>
 
@@ -71,7 +72,7 @@ const items = [
               <p class="tag">{d.tagline}</p>
               <p>{d.text}</p>
               <ul>{d.points.map((p) => <li>{p}</li>)}</ul>
-              <a class="btn" href={clinicUrl} target="_blank" rel="noopener">Umów wizytę</a>
+              <a class="btn" href={clinicUrl} target="_blank" rel="noopener">MEI Clinic — ZnanyLekarz</a>
             </div>
           </article>
         ))}
@@ -81,8 +82,8 @@ const items = [
 
   <section class="section alt">
     <div class="container prose">
-      <p>Zabiegi wykonuję we Wrocławiu. Wizytę można zarezerwować przez zewnętrzny serwis ZnanyLekarz.</p>
-      <p><a class="btn ghost" href={clinicUrl} target="_blank" rel="noopener">Rezerwacja w ZnanyLekarz</a></p>
+      <p>Zabiegi wykonuję we Wrocławiu. Wybierz miejsce i zarezerwuj wizytę przez ZnanyLekarz lub Booksy.</p>
+      <BookingLinks lang="pl" />
       <p class="notice">Opisy mają charakter wyłącznie informacyjny i nie stanowią porady medycznej. Nie zawierają obietnic efektów. Każdy zabieg poprzedza konsultacja i kwalifikacja.</p>
     </div>
   </section>

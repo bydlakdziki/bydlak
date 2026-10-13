@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import BookingLinks from '../components/BookingLinks.astro';
 import { getCollection } from 'astro:content';
 
 const latest = (await getCollection('artykuly', (a) => !a.data.draft))
@@ -36,8 +37,9 @@ const sections = [
         <p class="lead">
           Wiedza, odpowiedzialne podejście do zabiegów i edukacja dla lekarzy oraz osób zainteresowanych estetyką uśmiechu.
         </p>
+        <p><strong>Umów wizytę — wybierz miejsce:</strong></p>
+        <BookingLinks lang="pl" />
         <div class="actions">
-          <a class="btn" href="https://www.znanylekarz.pl/placowki/mei-clinic" target="_blank" rel="noopener">Umów wizytę</a>
           <a class="btn ghost" href="/szkolenia/">Szkolenia dla lekarzy</a>
           <a class="btn ghost" href="/o-mnie/">Poznaj moją historię</a>
         </div>

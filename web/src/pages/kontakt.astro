@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import BookingLinks from '../components/BookingLinks.astro';
 ---
 
 <Base title="Kontakt" description="Kontakt z dr Martą Kryczką: pytania o współpracę, szkolenia i zabiegi. Formularz kontaktowy.">
@@ -7,7 +8,8 @@ import Base from '../layouts/Base.astro';
     <div class="container">
       <p class="eyebrow">Kontakt</p>
       <h1>Napisz do mnie</h1>
-      <p class="lead">Masz pytanie o szkolenia, współpracę lub zabiegi? Wyślij wiadomość, odpowiem najszybciej, jak to możliwe. Wizytę możesz też umówić przez <a href="https://www.znanylekarz.pl/placowki/mei-clinic" target="_blank" rel="noopener">ZnanyLekarz</a>.</p>
+      <p class="lead">Masz pytanie o szkolenia, współpracę lub zabiegi? Wyślij wiadomość, odpowiem najszybciej, jak to możliwe. Wizytę możesz też umówić w jednym z dwóch miejsc we Wrocławiu:</p>
+      <BookingLinks lang="pl" />
     </div>
   </section>
 

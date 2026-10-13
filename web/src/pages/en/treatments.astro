@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import TopicIcon from '../../components/TopicIcon.astro';
+import BookingLinks from '../../components/BookingLinks.astro';
 
 const clinicUrl = 'https://www.znanylekarz.pl/placowki/mei-clinic';
 const devices = [
@@ -42,7 +43,7 @@ const items = [
       <h1>Treatments, approached responsibly</h1>
       <p class="lead">Reliable information on methods. Not every treatment is for everyone, and qualification always takes place during a consultation.</p>
       <p class="lead"><strong>Where I treat:</strong> Wrocław, Poland.</p>
-      <p><a class="btn" href={clinicUrl} target="_blank" rel="noopener">Book a visit on ZnanyLekarz</a></p>
+      <BookingLinks lang="en" />
     </div>
   </section>
 
@@ -71,7 +72,7 @@ const items = [
               <p class="tag">{d.tagline}</p>
               <p>{d.text}</p>
               <ul>{d.points.map((p) => <li>{p}</li>)}</ul>
-              <a class="btn" href={clinicUrl} target="_blank" rel="noopener">Book a visit</a>
+              <a class="btn" href={clinicUrl} target="_blank" rel="noopener">MEI Clinic — ZnanyLekarz</a>
             </div>
           </article>
         ))}
@@ -81,8 +82,8 @@ const items = [
 
   <section class="section alt">
     <div class="container prose">
-      <p>I treat patients in Wrocław, Poland. Visits can be booked through the external ZnanyLekarz service (in Polish).</p>
-      <p><a class="btn ghost" href={clinicUrl} target="_blank" rel="noopener">Booking on ZnanyLekarz</a></p>
+      <p>I treat patients in Wrocław, Poland. Choose a location and book a visit through ZnanyLekarz or Booksy.</p>
+      <BookingLinks lang="en" />
       <p class="notice">These descriptions are for information only and do not constitute medical advice. They contain no promises of results. Every treatment is preceded by a consultation and qualification.</p>
     </div>
   </section>

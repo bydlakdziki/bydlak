@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import BookingLinks from '../../components/BookingLinks.astro';
 import { getCollection } from 'astro:content';
 
 const latest = (await getCollection('artykuly-en', (a) => !a.data.draft))
@@ -36,8 +37,9 @@ const sections = [
         <p class="lead">
           Knowledge, a responsible approach to procedures, and education for physicians and anyone interested in smile aesthetics.
         </p>
+        <p><strong>Book a visit — choose a location:</strong></p>
+        <BookingLinks lang="en" />
         <div class="actions">
-          <a class="btn" href="https://www.znanylekarz.pl/placowki/mei-clinic" target="_blank" rel="noopener">Book a visit</a>
           <a class="btn ghost" href="/en/training/">Training for physicians</a>
           <a class="btn ghost" href="/en/about/">Read my story</a>
         </div>
