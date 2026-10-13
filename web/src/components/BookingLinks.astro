@@ -11,7 +11,9 @@ const isEn = lang === 'en';
     <a class="btn" href="https://www.znanylekarz.pl/placowki/mei-clinic" target="_blank" rel="noopener">MEI Clinic — ZnanyLekarz</a>
     <a class="btn ghost" href="https://booksy.com/pl-pl/dl/show-business/287130" target="_blank" rel="noopener">KG Instytut Dr Grudzień — Booksy</a>
   </div>
+  <p class="muted">MEI Clinic: {isEn ? 'Inżynierska 27B' : 'ul. Inżynierska 27B'}, 53-228 Wrocław.</p>
+  <p class="muted">KG Instytut Dr Grudzień: {isEn ? 'Jeździecka 6' : 'ul. Jeździecka 6'}, 53-032 Wrocław.</p>
   <p class="muted">{isEn
-    ? 'KG Instytut Dr Grudzień: Jeździecka 6, 53-032 Wrocław. When booking, check that the appointment is with Dr Marta Kryczka. Booking services are in Polish.'
-    : 'KG Instytut Dr Grudzień: ul. Jeździecka 6, 53-032 Wrocław. Przy rezerwacji sprawdź, czy wybrany termin dotyczy wizyty u dr Marty Kryczki.'}</p>
+    ? 'When booking, check that the appointment is with Dr Marta Kryczka. Booking services are in Polish.'
+    : 'Przy rezerwacji sprawdź, czy wybrany termin dotyczy wizyty u dr Marty Kryczki.'}</p>
 </div>
