@@ -1,5 +1,16 @@
 # Strona dr Marty Kryczki
 
+## Wdrożenie na home.pl
+
+Workflow `.github/workflows/deploy.yml` publikuje `web/dist/` przez FTPS do `./marta/`
+względem katalogu logowania konta FTP (`public_html`), czyli do `public_html/marta/`.
+Domena `drmartakryczka.pl` powinna wskazywać ten katalog jako „Podkatalog z separacją serwisu”.
+Strona pozostaje dostępna pod główną domeną, nie pod adresem `/marta/`.
+Przy migracji najpierw wgraj pliki, następnie zmień przypisanie domeny w panelu home.pl
+i sprawdź PL/EN, obrazy, rezerwacje oraz formularz PHP. Dotychczasowych plików
+w głównym `public_html` nie usuwaj przed zakończeniem weryfikacji; pozwalają wycofać
+zmianę przypisania domeny. Nie kieruj wdrożenia na katalog HotCast.
+
 Statyczna strona w Astro: O mnie, Szkolenia, Zabiegi, Artykuły.
 
 ```bash
