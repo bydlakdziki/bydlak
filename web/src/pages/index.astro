@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import BookingLinks from '../components/BookingLinks.astro';
+import InstagramLink from '../components/InstagramLink.astro';
 import { getCollection } from 'astro:content';
 
 const latest = (await getCollection('artykuly', (a) => !a.data.draft))
@@ -138,7 +139,7 @@ const sections = [
         <h2>Na co dzień na Instagramie</h2>
         <p class="muted">Relacje z konferencji, krótkie materiały edukacyjne i kulisy pracy. Zapraszam do obserwowania.</p>
       </div>
-      <a class="btn" href="https://www.instagram.com/drmartakryczka/" target="_blank" rel="noopener">@drmartakryczka</a>
+      <InstagramLink lang="pl" showUsername />
     </div>
   </section>
 </Base>

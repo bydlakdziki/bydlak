@@ -5,7 +5,7 @@ date: 2026-10-17
 type: 'In the media'
 location: 'Instagram, Instytut Dr Grudzień'
 link: 'https://www.instagram.com/p/DempaRei79X/'
-image: '/img/aktualnosci/film-instagram-podbrodek-dr-marta-kryczka.webp'
+image: '/img/aktualnosci/film-instagram-podbrodek-dr-marta-kryczka.webp?v=pozioma-2'
 imageAlt: 'Dr Marta Kryczka in an Instytut Dr Grudzień video about the chin and facial proportions'
 draft: false
 ---

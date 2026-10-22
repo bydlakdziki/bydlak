@@ -6,6 +6,12 @@ RewriteRule ^ https://drmartakryczka.pl%{REQUEST_URI} [L,R=301]
 
 ErrorDocument 404 /404.html
 
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/webp "access plus 1 year"
