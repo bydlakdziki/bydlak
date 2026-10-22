@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import InstagramLink from '../components/InstagramLink.astro';
 
 interface Props {
   title: string;
@@ -141,6 +142,9 @@ const fullTitle = path === '/' || path === '/en/' ? title : `${title} | dr Marta
             {altPath && (
               <li><a class="lang-switch" href={altPath} hreflang={isEn ? 'pl' : 'en'} lang={isEn ? 'pl' : 'en'} aria-label={isEn ? 'Polski' : 'English'}>{isEn ? 'PL' : 'EN'}</a></li>
             )}
+            <li>
+              <InstagramLink lang={lang} />
+            </li>
           </ul>
         </nav>
       </div>
@@ -150,7 +154,7 @@ const fullTitle = path === '/' || path === '/en/' ? title : `${title} | dr Marta
       <div class="container">
         <span>© {new Date().getFullYear()} dr Marta Kryczka</span>
         <span>{isEn ? 'Content is for information and education and does not replace a medical consultation.' : 'Treści mają charakter edukacyjny i nie zastępują konsultacji lekarskiej.'}</span>
-        <a href="https://instagram.com/drmartakryczka" rel="noopener">Instagram</a>
+        <InstagramLink lang={lang} />
       </div>
     </footer>
   </body>
