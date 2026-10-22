@@ -2,6 +2,13 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
+const hasPublishedCover = (entry: { draft: boolean; image?: string; imageAlt: string }) =>
+  entry.draft || Boolean(entry.image?.trim() && entry.imageAlt.trim());
+const coverRequired = {
+  message: 'Published articles and news require an image and imageAlt.',
+  path: ['image'],
+};
+
 const artykuly = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/artykuly' }),
   schema: z.object({
@@ -12,7 +19,7 @@ const artykuly = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().default(''),
     draft: z.boolean().default(false),
-  }),
+  }).refine(hasPublishedCover, coverRequired),
 });
 
 const aktualnosci = defineCollection({
@@ -27,7 +34,7 @@ const aktualnosci = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().default(''),
     draft: z.boolean().default(false),
-  }),
+  }).refine(hasPublishedCover, coverRequired),
 });
 
 const artykulyEn = defineCollection({
