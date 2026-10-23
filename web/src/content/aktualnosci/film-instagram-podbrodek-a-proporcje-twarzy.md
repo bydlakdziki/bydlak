@@ -5,6 +5,7 @@ date: 2026-10-17
 type: 'W mediach'
 location: 'Instagram, Instytut Dr Grudzień'
 link: 'https://www.instagram.com/p/DempaRei79X/'
+imageLink: 'https://www.instagram.com/p/DempaRei79X/'
 image: '/img/aktualnosci/film-instagram-podbrodek-dr-marta-kryczka.webp?v=pozioma-2'
 imageAlt: 'Dr Marta Kryczka w filmie Instytutu Dr Grudzień o podbródku i proporcjach twarzy'
 draft: false

@@ -31,6 +31,7 @@ const aktualnosci = defineCollection({
     type: z.string().default('Wydarzenie'),
     location: z.string().optional(),
     link: z.string().url().optional(),
+    imageLink: z.string().url().optional(),
     image: z.string().optional(),
     imageAlt: z.string().default(''),
     draft: z.boolean().default(false),

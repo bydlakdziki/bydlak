@@ -23,7 +23,11 @@ const { Content } = await render(entry);
     <div class="container prose">
       <p class="eyebrow">{entry.data.type} · {entry.data.date.toLocaleDateString('pl-PL')}{entry.data.location ? ` · ${entry.data.location}` : ''}</p>
       <h1>{entry.data.title}</h1>
-      {entry.data.image && <img class="banner" src={entry.data.image} alt={entry.data.imageAlt} loading="lazy" />}
+      {entry.data.image && (entry.data.imageLink ? (
+        <a href={entry.data.imageLink} target="_blank" rel="noopener noreferrer" aria-label="Obejrzyj film (otwiera się w nowej karcie)">
+          <img class="banner" src={entry.data.image} alt={entry.data.imageAlt} loading="lazy" />
+        </a>
+      ) : <img class="banner" src={entry.data.image} alt={entry.data.imageAlt} loading="lazy" />)}
       <Content />
       {entry.data.link && <p><a href={entry.data.link} rel="noopener">Strona wydarzenia →</a></p>}
       <p><a href="/aktualnosci/">← Wszystkie aktualności</a></p>
