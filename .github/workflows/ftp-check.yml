@@ -37,7 +37,14 @@ jobs:
               stage = "protected data channel"
               ftp.prot_p()
               stage = "root listing"
-              ftp.nlst()
+              for name, facts in sorted(ftp.mlsd()):
+                  if facts.get("type") in {"cdir", "pdir"}:
+                      continue
+                  print(
+                      f"ROOT {facts.get('type', 'unknown')} "
+                      f"size={facts.get('size', '-')} name={name!r}",
+                      flush=True,
+                  )
               print("FTP root directory listing: OK", flush=True)
               stage = "marta directory"
               ftp.cwd("marta")
