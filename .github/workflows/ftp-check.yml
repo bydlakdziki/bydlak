@@ -9,7 +9,7 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 10
     steps:
       - name: Sprawdź połączenie, logowanie i odczyt katalogów
         env:
@@ -19,9 +19,12 @@ jobs:
         run: |
           python3 - <<'PY'
           import ftplib
+          import hashlib
+          import io
           import os
           import re
           import ssl
+          import urllib.request
 
           stage = "connection"
           ftp = ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=30)
@@ -37,7 +40,9 @@ jobs:
               stage = "protected data channel"
               ftp.prot_p()
               stage = "root listing"
-              for name, facts in sorted(ftp.mlsd()):
+              root_entries = list(ftp.mlsd())
+              root_dirs = {name for name, facts in root_entries if facts.get("type") == "dir"}
+              for name, facts in sorted(root_entries):
                   if facts.get("type") in {"cdir", "pdir"}:
                       continue
                   print(
@@ -46,6 +51,68 @@ jobs:
                       flush=True,
                   )
               print("FTP root directory listing: OK", flush=True)
+              stage = "site inventory"
+              def read_file(path):
+                  data = io.BytesIO()
+                  ftp.retrbinary(f"RETR {path}", data.write)
+                  return data.getvalue()
+
+              for directory in ("", "marta", "hotcast"):
+                  prefix = f"{directory}/" if directory else ""
+                  entries = list(ftp.mlsd(directory or "."))
+                  files = {name for name, facts in entries if facts.get("type") == "file"}
+                  for filename in ("index.html", ".htaccess", "wyslij.php"):
+                      if filename not in files:
+                          continue
+                      data = read_file(prefix + filename)
+                      print(
+                          f"FILE {prefix + filename!r} size={len(data)} "
+                          f"sha256={hashlib.sha256(data).hexdigest()}",
+                          flush=True,
+                      )
+                      if filename == ".htaccess":
+                          print(f"HTACCESS {prefix!r}: {data.decode('utf-8')!r}", flush=True)
+                  if directory:
+                      for name, facts in sorted(entries):
+                          if facts.get("type") in {"file", "dir"}:
+                              print(f"SITE {directory!r} {facts['type']} {name!r}", flush=True)
+
+              # Compare web content with FTP without changing either site.
+              # This is not a TLS certificate validation test.
+              context = ssl._create_unverified_context()
+              for host, directory, paths in (
+                  ("drmartakryczka.pl", "marta", ("index.html", "en/index.html", "wyslij.php")),
+                  ("hotcast.pl", "hotcast", ("index.html",)),
+              ):
+                  for path in paths:
+                      ftp_data = read_file(f"{directory}/{path}")
+                      if path.endswith(".php"):
+                          continue
+                      url = f"https://{host}/{path}"
+                      with urllib.request.urlopen(url, context=context, timeout=30) as response:
+                          web_data = response.read()
+                      if web_data != ftp_data:
+                          raise RuntimeError("Website content differs from FTP directory")
+                      print(f"WEB_MATCH {host}/{path} = FTP /{directory}/{path}", flush=True)
+
+              stage = "legacy directory inventory"
+              def walk(directory):
+                  result = []
+                  for name, facts in ftp.mlsd(directory):
+                      if facts.get("type") == "file":
+                          result.append(f"{directory}/{name}")
+                      elif facts.get("type") == "dir":
+                          result.extend(walk(f"{directory}/{name}"))
+                  return result
+
+              for directory in ("_astro", "aktualnosci", "artykuly", "en", "img",
+                                "kontakt", "o-mnie", "portfolio", "szkolenia", "zabiegi"):
+                  if directory not in root_dirs:
+                      continue
+                  paths = walk(directory)
+                  print(f"LEGACY_DIRECTORY {directory!r} files={len(paths)}", flush=True)
+                  for path in paths:
+                      print(f"LEGACY_FILE {path!r}", flush=True)
               stage = "marta directory"
               ftp.cwd("marta")
               names = ftp.nlst()
