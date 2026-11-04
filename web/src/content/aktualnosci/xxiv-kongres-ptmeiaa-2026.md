@@ -1,5 +1,6 @@
 ---
 title: 'XXIV Międzynarodowy Kongres Medycyny Estetycznej i Anti-Aging PTMEiAA'
+seoTitle: 'XXIV Kongres Medycyny Estetycznej PTMEiAA'
 description: 'Wzięłam udział w XXIV Międzynarodowym Kongresie Medycyny Estetycznej i Anti-Aging PTMEiAA „Anatomia współpracy” w Warszawie.'
 date: 2026-10-04
 type: 'Kongres'

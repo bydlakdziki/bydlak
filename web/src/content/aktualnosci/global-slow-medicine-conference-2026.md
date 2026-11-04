@@ -1,5 +1,7 @@
 ---
 title: 'Global Slow Medicine Conference 2026'
+seoTitle: 'Slow Medicine Conference 2026 – Warszawa'
+seoDescription: 'Relacja z Global Slow Medicine Conference w Warszawie: świadomy rozwój praktyki medycyny estetycznej, jakość opieki i doświadczenie pacjenta.'
 description: 'Wzięłam udział w Global Slow Medicine Conference w Warszawie – konferencji o świadomym rozwoju praktyki medycyny estetycznej, jakości opieki i doświadczeniu pacjenta.'
 date: 2026-10-10
 type: 'Konferencja'

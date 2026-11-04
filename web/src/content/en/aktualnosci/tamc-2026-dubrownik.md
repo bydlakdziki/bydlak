@@ -1,5 +1,6 @@
 ---
 title: 'TAMC 2026 in Dubrovnik – The Aesthetic Medicine Congress'
+seoTitle: 'TAMC 2026 in Dubrovnik'
 description: 'I attended the 9th edition of the international aesthetic medicine congress TAMC in Dubrovnik (24–26 September 2026).'
 date: 2026-09-26
 type: 'Conference'

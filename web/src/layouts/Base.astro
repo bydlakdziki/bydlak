@@ -9,6 +9,7 @@ interface Props {
   imageAlt?: string;
   type?: 'website' | 'article';
   published?: Date;
+  modified?: Date;
   noindex?: boolean;
   jsonLd?: Record<string, unknown>[];
 }
@@ -16,10 +17,11 @@ interface Props {
 const {
   title,
   description = 'dr Marta Kryczka – lekarz dentysta, medycyna estetyczna i ortodoncja. Wrocław.',
-  image = '/img/og.webp',
+  image = '/img/og.jpg',
   imageAlt = 'dr Marta Kryczka – medycyna estetyczna i ortodoncja',
   type = 'website',
   published,
+  modified,
   noindex = false,
   jsonLd = [],
 } = Astro.props;
@@ -91,7 +93,23 @@ const baseLd = [
   { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${site}/#website`, url: `${site}${homeHref}`, name: 'dr Marta Kryczka', inLanguage: isEn ? 'en-GB' : 'pl-PL', publisher: { '@id': `${site}/#person` } },
   { '@context': 'https://schema.org', ...person },
 ];
-const graph = [...baseLd, ...jsonLd.map((j) => ({ '@context': 'https://schema.org', ...j }))];
+const isDefaultImage = image === '/img/og.jpg';
+const section = nav.find((n) => n.href !== homeHref && path.startsWith(n.href));
+const breadcrumbs = section
+  ? [
+      { name: isEn ? 'Home' : 'Strona główna', url: `${site}${homeHref}` },
+      { name: section.label, url: new URL(section.href, Astro.site).href },
+      ...(path !== section.href ? [{ name: title, url: canonical }] : []),
+    ]
+  : [];
+const breadcrumbLd = breadcrumbs.length
+  ? [{
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: b.url })),
+    }]
+  : [];
+const graph = [...baseLd, ...breadcrumbLd, ...jsonLd.map((j) => ({ '@context': 'https://schema.org', ...j }))];
 const fullTitle = path === '/' || path === '/en/' ? title : `${title} | dr Marta Kryczka`;
 ---
 
@@ -122,7 +140,15 @@ const fullTitle = path === '/' || path === '/en/' ? title : `${title} | dr Marta
     <meta property="og:locale" content={isEn ? 'en_GB' : 'pl_PL'} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:alt" content={imageAlt} />
+    {isDefaultImage && (
+      <>
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+      </>
+    )}
     {published && <meta property="article:published_time" content={published.toISOString()} />}
+    {modified && <meta property="article:modified_time" content={modified.toISOString()} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />

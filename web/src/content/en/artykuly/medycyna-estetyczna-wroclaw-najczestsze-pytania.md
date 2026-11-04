@@ -1,5 +1,6 @@
 ---
 title: "Aesthetic medicine: the most common questions patients ask before a treatment"
+seoTitle: "Aesthetic medicine: patient questions"
 description: "Answers to questions patients ask before aesthetic medicine treatments: safety, how long effects last, complications and qualification."
 date: 2026-10-10
 category: "Aesthetic medicine"

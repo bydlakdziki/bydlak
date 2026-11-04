@@ -1,5 +1,6 @@
 ---
 title: 'TAMC 2026 w Dubrowniku – The Aesthetic Medicine Congress'
+seoTitle: 'TAMC 2026 w Dubrowniku'
 description: 'Uczestniczyłam w 9. edycji międzynarodowego kongresu medycyny estetycznej TAMC w Dubrowniku (24–26 września 2026 r.).'
 date: 2026-09-26
 type: 'Konferencja'

@@ -1,5 +1,6 @@
 ---
 title: "Medycyna estetyczna we Wrocławiu: jak wygląda pierwsza konsultacja i jak się do niej przygotować"
+seoTitle: "Medycyna estetyczna Wrocław: konsultacja"
 description: "Co dzieje się podczas pierwszej konsultacji z lekarzem medycyny estetycznej, o co zapytać i jakie informacje o zdrowiu warto przygotować."
 date: 2026-10-10
 category: "Medycyna estetyczna"

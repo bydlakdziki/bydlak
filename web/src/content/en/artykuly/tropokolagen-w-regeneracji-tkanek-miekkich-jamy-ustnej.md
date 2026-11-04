@@ -1,5 +1,7 @@
 ---
 title: "Tropocollagen in the regeneration of oral soft tissues: the latest reports"
+seoTitle: "Tropocollagen in oral soft tissues"
+seoDescription: "A clinical observation of gingival condition after tropocollagen injections in Invisalign patients. A summary of my publication in Reumatologia 2024."
 description: "A clinical observation of gingival condition after tropocollagen injections in patients treated orthodontically with Invisalign aligners. A summary of my publication in Reumatologia 2024."
 date: 2026-10-10
 category: "Orthodontics"

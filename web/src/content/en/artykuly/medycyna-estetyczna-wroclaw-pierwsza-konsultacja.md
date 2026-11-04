@@ -1,5 +1,6 @@
 ---
 title: "Aesthetic medicine in Wrocław: what the first consultation looks like and how to prepare"
+seoTitle: "Aesthetic medicine Wrocław: consultation"
 description: "What happens during a first consultation with an aesthetic medicine physician, what to ask and what health information to prepare."
 date: 2026-10-10
 category: "Aesthetic medicine"

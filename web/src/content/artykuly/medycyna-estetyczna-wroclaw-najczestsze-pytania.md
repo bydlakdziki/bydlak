@@ -1,5 +1,6 @@
 ---
 title: "Medycyna estetyczna: najczęstsze pytania pacjentów przed zabiegiem"
+seoTitle: "Medycyna estetyczna: pytania pacjentów"
 description: "Odpowiedzi na pytania, które pacjenci zadają przed zabiegami medycyny estetycznej: bezpieczeństwo, czas utrzymywania się efektów, powikłania i kwalifikacja."
 date: 2026-10-10
 category: "Medycyna estetyczna"

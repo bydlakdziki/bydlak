@@ -22,6 +22,7 @@ npm run build    # wynik w web/dist
 
 - Nowe wydarzenie/konferencja: dodaj plik `.md` w `src/content/aktualnosci/` (wzór: `przyklad-wydarzenia.md`), zdjęcia w `public/img/aktualnosci/`, ustaw `draft: false`.
 - Nowy artykuł: dodaj plik `.md` w `src/content/artykuly/` (wzór: `przyklad-artykulu.md`) i ustaw `draft: false`.
+- Opcjonalne pola SEO we frontmatterze: `seoTitle` (maks. 41 znaków, tytuł w Google i breadcrumbach), `seoDescription` (maks. 160 znaków) oraz `updated` (data ostatniej zmiany, trafia do `dateModified`).
 - Każdy publikowany artykuł i każda aktualność muszą mieć `image` oraz niepusty `imageAlt` w PL i EN; build blokuje publikację bez tych pól. Dla filmu używaj jego okładki lub kadru zapisanego lokalnie w `public/img/`. Bez dostępnego zdjęcia pozostaw `draft: true` do czasu otrzymania materiału.
 - W aktualnościach opcjonalne `imageLink` ustawia adres filmu otwieranego po kliknięciu okładki we wpisie; uzupełnij go w PL i EN.
 - Certyfikaty i opis „O mnie”: edytuj `src/pages/o-mnie.astro`.
