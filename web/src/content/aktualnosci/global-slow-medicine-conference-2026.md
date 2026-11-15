@@ -18,13 +18,13 @@ Hasłem przewodnim był świadomy rozwój praktyki: jakość opieki, zaufanie i 
 
 ## Z wydarzenia
 
-<img src="/img/aktualnosci/slow-medicine-conference-dr-marta-kryczka-2026.webp" alt="Dr Marta Kryczka podczas Global Slow Medicine Conference w Warszawie" loading="lazy" />
+<img src="/img/aktualnosci/slow-medicine-conference-dr-marta-kryczka-2026.webp" width="1200" height="1600" alt="Dr Marta Kryczka podczas Global Slow Medicine Conference w Warszawie" loading="lazy" />
 
-<img src="/img/aktualnosci/slow-medicine-conference-strefa-wystawiennicza-2026.webp" alt="Strefa wystawiennicza z urządzeniami laserowymi podczas Global Slow Medicine Conference" loading="lazy" />
+<img src="/img/aktualnosci/slow-medicine-conference-strefa-wystawiennicza-2026.webp" width="1200" height="1600" alt="Strefa wystawiennicza z urządzeniami laserowymi podczas Global Slow Medicine Conference" loading="lazy" />
 
-<img src="/img/aktualnosci/slow-medicine-conference-wystapienie-dane-2026.webp" alt="Prelekcja na scenie Global Slow Medicine Conference z wykresem danych" loading="lazy" />
+<img src="/img/aktualnosci/slow-medicine-conference-wystapienie-dane-2026.webp" width="1200" height="900" alt="Prelekcja na scenie Global Slow Medicine Conference z wykresem danych" loading="lazy" />
 
-<img src="/img/aktualnosci/slow-medicine-conference-prelekcja-czas-i-starzenie-2026.webp" alt="Slajd „Czy możemy zatrzymać zegar?” podczas prelekcji na Global Slow Medicine Conference" loading="lazy" />
+<img src="/img/aktualnosci/slow-medicine-conference-prelekcja-czas-i-starzenie-2026.webp" width="1200" height="900" alt="Slajd „Czy możemy zatrzymać zegar?” podczas prelekcji na Global Slow Medicine Conference" loading="lazy" />
 
 ## Dlaczego warto uczestniczyć w takich wydarzeniach
 

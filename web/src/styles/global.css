@@ -93,7 +93,8 @@ img.portrait { padding: 0; background: none; width: 100%; height: auto; object-f
   border-radius: var(--radius); padding: 1.5rem;
 }
 .section.alt .card { background: var(--bg); }
-.card h3 { margin-bottom: .4em; }
+.card h2, .card h3 { margin-bottom: .4em; }
+.card h2 { font-size: 1.25rem; }
 .card p { margin: 0; color: var(--muted); }
 .card a.more { display: inline-block; margin-top: 1rem; }
 .tag { font-size: .8rem; color: var(--accent); }

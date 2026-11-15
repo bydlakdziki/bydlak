@@ -17,13 +17,13 @@ The guiding theme was the mindful development of a practice: quality of care, tr
 
 ## From the event
 
-<img src="/img/aktualnosci/slow-medicine-conference-dr-marta-kryczka-2026.webp" alt="Dr Marta Kryczka at the Global Slow Medicine Conference in Warsaw" loading="lazy" />
+<img src="/img/aktualnosci/slow-medicine-conference-dr-marta-kryczka-2026.webp" width="1200" height="1600" alt="Dr Marta Kryczka at the Global Slow Medicine Conference in Warsaw" loading="lazy" />
 
-<img src="/img/aktualnosci/slow-medicine-conference-strefa-wystawiennicza-2026.webp" alt="Exhibition area with laser devices at the Global Slow Medicine Conference" loading="lazy" />
+<img src="/img/aktualnosci/slow-medicine-conference-strefa-wystawiennicza-2026.webp" width="1200" height="1600" alt="Exhibition area with laser devices at the Global Slow Medicine Conference" loading="lazy" />
 
-<img src="/img/aktualnosci/slow-medicine-conference-wystapienie-dane-2026.webp" alt="A talk on the Global Slow Medicine Conference stage with a data chart" loading="lazy" />
+<img src="/img/aktualnosci/slow-medicine-conference-wystapienie-dane-2026.webp" width="1200" height="900" alt="A talk on the Global Slow Medicine Conference stage with a data chart" loading="lazy" />
 
-<img src="/img/aktualnosci/slow-medicine-conference-prelekcja-czas-i-starzenie-2026.webp" alt="Slide “Can we stop the clock?” during a talk at the Global Slow Medicine Conference" loading="lazy" />
+<img src="/img/aktualnosci/slow-medicine-conference-prelekcja-czas-i-starzenie-2026.webp" width="1200" height="900" alt="Slide “Can we stop the clock?” during a talk at the Global Slow Medicine Conference" loading="lazy" />
 
 ## Why I attend events like this
 

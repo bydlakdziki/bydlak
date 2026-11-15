@@ -26,7 +26,7 @@ const articles = (await getCollection('artykuly-en', (a) => !a.data.draft)).sort
             <a class="card" href={`/en/articles/${a.id}/`} style="text-decoration:none;color:inherit">
               {a.data.image && <img class="card-img" src={a.data.image} alt={a.data.imageAlt} loading="lazy" />}
               <span class="tag">{a.data.category} · {a.data.date.toLocaleDateString('en-GB')}</span>
-              <h3>{a.data.title}</h3>
+              <h2>{a.data.title}</h2>
               <p>{a.data.description}</p>
             </a>
           ))}
