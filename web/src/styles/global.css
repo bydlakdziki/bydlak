@@ -111,6 +111,9 @@ img.portrait { padding: 0; background: none; width: 100%; height: auto; object-f
 
 .site-footer { border-top: 1px solid var(--line); padding: 2.5rem 0; color: var(--muted); font-size: .9rem; }
 .site-footer .container { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; width: 100%; order: -1; }
+.footer-nav a { color: var(--ink); text-decoration: none; }
+.footer-nav a:hover { color: var(--accent-dark); text-decoration: underline; }
 
 @media (max-width: 760px) {
   .hero .container { grid-template-columns: 1fr; }

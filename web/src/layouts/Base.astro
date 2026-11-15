@@ -120,6 +120,7 @@ const fullTitle = path === '/' || path === '/en/' ? title : `${title} | dr Marta
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192" />
     <link rel="icon" type="image/png" href="/img/dr-marta-kryczka-ikona.png" sizes="512x512" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="description" content={description} />
@@ -159,7 +160,7 @@ const fullTitle = path === '/' || path === '/en/' ? title : `${title} | dr Marta
   <body>
     <header class="site-header">
       <div class="container">
-        <a class="brand" href={homeHref} aria-label={isEn ? 'dr Marta Kryczka – home page' : 'dr Marta Kryczka – strona główna'}><img src="/img/dr-marta-kryczka-logo.png" alt="dr Marta Kryczka" width="1200" height="416" /></a>
+        <a class="brand" href={homeHref} aria-label={isEn ? 'dr Marta Kryczka – home page' : 'dr Marta Kryczka – strona główna'}><img src="/img/dr-marta-kryczka-logo-520.webp" alt="dr Marta Kryczka" width="520" height="167" /></a>
         <nav aria-label={isEn ? 'Main navigation' : 'Główna nawigacja'}>
           <ul>
             {nav.map((n) => (
@@ -179,6 +180,9 @@ const fullTitle = path === '/' || path === '/en/' ? title : `${title} | dr Marta
     <footer class="site-footer">
       <div class="container">
         <span>© {new Date().getFullYear()} dr Marta Kryczka</span>
+        <nav class="footer-nav" aria-label={isEn ? 'Footer navigation' : 'Nawigacja w stopce'}>
+          {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+        </nav>
         <span>{isEn ? 'Content is for information and education and does not replace a medical consultation.' : 'Treści mają charakter edukacyjny i nie zastępują konsultacji lekarskiej.'}</span>
         <InstagramLink lang={lang} />
       </div>
