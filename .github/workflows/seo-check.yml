@@ -1,0 +1,29 @@
+name: Kontrola SEO
+
+on:
+  pull_request:
+    paths:
+      - 'web/**'
+      - '.github/scripts/seo_check.py'
+      - '.github/workflows/seo-check.yml'
+      - 'docs/seo-najlepsze-praktyki.md'
+  workflow_dispatch:
+
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+        working-directory: web
+      - run: npm run build
+        working-directory: web
+      - name: Kontrola SEO (zasady w docs/seo-najlepsze-praktyki.md)
+        run: python3 .github/scripts/seo_check.py

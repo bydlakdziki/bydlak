@@ -19,8 +19,8 @@ Kongres był też okazją do spotkań ze znajomymi z branży i wymiany doświadc
 
 ## Z kongresu
 
-<img src="/img/aktualnosci/kongres-ptmeiaa-dr-marta-kryczka-portret-2026.webp" alt="Dr Marta Kryczka na tle ścianki kongresu „Anatomia współpracy”" loading="lazy" />
+<img src="/img/aktualnosci/kongres-ptmeiaa-dr-marta-kryczka-portret-2026.webp" width="1200" height="1600" alt="Dr Marta Kryczka na tle ścianki kongresu „Anatomia współpracy”" loading="lazy" />
 
-<img src="/img/aktualnosci/kongres-ptmeiaa-baner-xxiv-kongres-medycyny-estetycznej-2026.webp" alt="Baner XXIV Międzynarodowego Kongresu Medycyny Estetycznej i Anti-Aging w Warszawie" loading="lazy" />
+<img src="/img/aktualnosci/kongres-ptmeiaa-baner-xxiv-kongres-medycyny-estetycznej-2026.webp" width="1200" height="1600" alt="Baner XXIV Międzynarodowego Kongresu Medycyny Estetycznej i Anti-Aging w Warszawie" loading="lazy" />
 
-<img src="/img/aktualnosci/kongres-ptmeiaa-prezentacja-blizny-laser-2026.webp" alt="Slajd z prezentacji kongresowej o doborze lasera do typu blizny" loading="lazy" />
+<img src="/img/aktualnosci/kongres-ptmeiaa-prezentacja-blizny-laser-2026.webp" width="1200" height="900" alt="Slajd z prezentacji kongresowej o doborze lasera do typu blizny" loading="lazy" />

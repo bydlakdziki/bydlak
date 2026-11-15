@@ -19,8 +19,8 @@ The congress was also an opportunity to meet industry friends and exchange clini
 
 ## From the congress
 
-<img src="/img/aktualnosci/kongres-ptmeiaa-dr-marta-kryczka-portret-2026.webp" alt="Dr Marta Kryczka in front of the “Anatomy of Collaboration” congress backdrop" loading="lazy" />
+<img src="/img/aktualnosci/kongres-ptmeiaa-dr-marta-kryczka-portret-2026.webp" width="1200" height="1600" alt="Dr Marta Kryczka in front of the “Anatomy of Collaboration” congress backdrop" loading="lazy" />
 
-<img src="/img/aktualnosci/kongres-ptmeiaa-baner-xxiv-kongres-medycyny-estetycznej-2026.webp" alt="Banner of the XXIV International Congress of Aesthetic Medicine and Anti-Aging in Warsaw" loading="lazy" />
+<img src="/img/aktualnosci/kongres-ptmeiaa-baner-xxiv-kongres-medycyny-estetycznej-2026.webp" width="1200" height="1600" alt="Banner of the XXIV International Congress of Aesthetic Medicine and Anti-Aging in Warsaw" loading="lazy" />
 
-<img src="/img/aktualnosci/kongres-ptmeiaa-prezentacja-blizny-laser-2026.webp" alt="Congress presentation slide on choosing a laser for the scar type" loading="lazy" />
+<img src="/img/aktualnosci/kongres-ptmeiaa-prezentacja-blizny-laser-2026.webp" width="1200" height="900" alt="Congress presentation slide on choosing a laser for the scar type" loading="lazy" />

@@ -22,6 +22,8 @@ jobs:
         working-directory: web
       - run: npm run build
         working-directory: web
+      - name: Kontrola SEO (błędy blokują wdrożenie)
+        run: python3 .github/scripts/seo_check.py
       - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
