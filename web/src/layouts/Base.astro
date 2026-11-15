@@ -167,7 +167,7 @@ const fullTitle = path === '/' || path === '/en/' ? title : `${title} | dr Marta
               <li><a href={n.href} aria-current={path.startsWith(n.href) ? 'page' : undefined}>{n.label}</a></li>
             ))}
             {altPath && (
-              <li><a class="lang-switch" href={altPath} hreflang={isEn ? 'pl' : 'en'} lang={isEn ? 'pl' : 'en'} aria-label={isEn ? 'Polski' : 'English'}>{isEn ? 'PL' : 'EN'}</a></li>
+              <li><a class="lang-switch" href={altPath} hreflang={isEn ? 'pl' : 'en'} lang={isEn ? 'pl' : 'en'} aria-label={isEn ? 'PL – Polski' : 'EN – English'}>{isEn ? 'PL' : 'EN'}</a></li>
             )}
             <li>
               <InstagramLink lang={lang} />
