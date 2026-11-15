@@ -1,5 +1,6 @@
 ---
 title: 'Film: leczenie nakładkowe z perspektywy ortodontki i pacjentki'
+seoTitle: 'Film: leczenie nakładkowe oczami lekarki'
 description: 'Krótki film na profilu StomatoLogicznie, w którym opowiadam o własnych doświadczeniach z leczeniem nakładkowym.'
 date: 2026-09-10
 type: 'W mediach'

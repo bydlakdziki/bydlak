@@ -1,5 +1,6 @@
 ---
 title: 'XXIV International Congress of Aesthetic Medicine and Anti-Aging (PTMEiAA)'
+seoTitle: 'XXIV PTMEiAA Aesthetic Medicine Congress'
 description: 'I attended the XXIV International Congress of Aesthetic Medicine and Anti-Aging of PTMEiAA, “The Anatomy of Collaboration”, in Warsaw.'
 date: 2026-10-04
 type: 'Congress'

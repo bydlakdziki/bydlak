@@ -1,5 +1,6 @@
 ---
 title: 'Professional skill in aesthetic and reparative medicine (PTMEiAA)'
+seoTitle: 'Aesthetic and reparative medicine exam'
 description: 'I passed the professional skill exam in Aesthetic and Reparative Medicine (code 028) at the Polish Society of Aesthetic Medicine and Anti-Aging.'
 date: 2026-10-03
 type: 'Certification'

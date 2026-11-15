@@ -1,5 +1,7 @@
 ---
 title: "Tropokolagen w regeneracji tkanek miękkich jamy ustnej: najnowsze doniesienia"
+seoTitle: "Tropokolagen w tkankach jamy ustnej"
+seoDescription: "Obserwacja kliniczna stanu dziąseł po iniekcjach tropokolagenu u pacjentów leczonych nakładkami Invisalign. Omówienie publikacji z Reumatologii 2024."
 description: "Obserwacja kliniczna stanu dziąseł po iniekcjach tropokolagenu u pacjentów leczonych ortodontycznie nakładkami Invisalign. Omówienie mojej publikacji z Reumatologii 2024."
 date: 2026-10-10
 category: "Ortodoncja"

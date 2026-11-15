@@ -1,5 +1,6 @@
 ---
 title: 'Video: aligner treatment from the perspective of an orthodontist and a patient'
+seoTitle: 'Video: aligner treatment, two views'
 description: 'A short video on the StomatoLogicznie profile in which I talk about my own experience with aligner treatment.'
 date: 2026-09-10
 type: 'In the media'

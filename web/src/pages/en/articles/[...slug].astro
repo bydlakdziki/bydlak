@@ -12,18 +12,19 @@ const { Content } = await render(article);
 ---
 
 <Base
-  title={article.data.title}
-  description={article.data.description}
+  title={article.data.seoTitle ?? article.data.title}
+  description={article.data.seoDescription ?? article.data.description}
   image={article.data.image}
   imageAlt={article.data.imageAlt}
   type="article"
   published={article.data.date}
+  modified={article.data.updated ?? article.data.date}
   jsonLd={[{
     '@type': 'Article',
     headline: article.data.title,
-    description: article.data.description,
+    description: article.data.seoDescription ?? article.data.description,
     datePublished: article.data.date.toISOString(),
-    dateModified: article.data.date.toISOString(),
+    dateModified: (article.data.updated ?? article.data.date).toISOString(),
     inLanguage: 'en-GB',
     image: article.data.image ? new URL(article.data.image, Astro.site).href : undefined,
     mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,

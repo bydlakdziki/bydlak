@@ -1,5 +1,6 @@
 ---
 title: 'Umiejętność zawodowa z medycyny estetyczno-naprawczej (PTMEiAA)'
+seoTitle: 'Egzamin z medycyny estetyczno-naprawczej'
 description: 'Zdałam egzamin z umiejętności zawodowej – Medycyna Estetyczno-Naprawcza (kod 028) w Polskim Towarzystwie Medycyny Estetycznej i Anti-Aging.'
 date: 2026-10-03
 type: 'Certyfikacja'

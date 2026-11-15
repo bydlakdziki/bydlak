@@ -1,6 +1,8 @@
 ---
 title: "Laseroterapia w protokołach łączonych z toksyną botulinową, CaHA, PLLA, PCL i kwasem hialuronowym"
 description: "Przegląd narracyjny z praktycznym algorytmem sekwencjonowania zabiegów: kiedy i w jakiej kolejności łączyć lasery i urządzenia energetyczne z preparatami iniekcyjnymi."
+seoTitle: "Laseroterapia w protokołach łączonych"
+seoDescription: "Przegląd narracyjny z algorytmem sekwencjonowania: kiedy i w jakiej kolejności łączyć lasery i urządzenia energetyczne z preparatami iniekcyjnymi."
 date: 2026-10-10
 category: "Medycyna estetyczna"
 image: "/img/artykuly-laseroterapia-terapie-laczone-architektura-skory.webp"

@@ -1,5 +1,7 @@
 ---
 title: "Laser therapy in protocols combined with botulinum toxin, CaHA, PLLA, PCL and hyaluronic acid"
+seoTitle: "Laser therapy in combined protocols"
+seoDescription: "A narrative review with a practical algorithm for sequencing treatments: when and in what order to combine lasers with injectable products."
 description: "A narrative review with a practical algorithm for sequencing treatments: when and in what order to combine lasers and energy-based devices with injectable products."
 date: 2026-10-10
 category: "Aesthetic medicine"

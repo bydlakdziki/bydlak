@@ -1,5 +1,6 @@
 ---
 title: 'Wywiad w Medonecie: praca lekarza dentysty w Wielkiej Brytanii'
+seoTitle: 'Wywiad w Medonecie: dentysta w UK'
 description: 'Rozmowa dla Medonet.pl o mojej drodze zawodowej, nauce ortodoncji w Wiedniu i pracy dentysty w Wielkiej Brytanii.'
 date: 2026-09-02
 type: 'W mediach'

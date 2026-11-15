@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -28,3 +30,6 @@ jobs:
           protocol: ftps
           local-dir: web/dist/
           server-dir: ./marta/
+      - name: Zgłoś adresy do IndexNow (Bing i inne)
+        continue-on-error: true
+        run: python3 .github/scripts/indexnow.py

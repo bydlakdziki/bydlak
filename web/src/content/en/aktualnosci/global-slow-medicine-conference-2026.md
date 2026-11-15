@@ -1,5 +1,6 @@
 ---
 title: 'Global Slow Medicine Conference 2026'
+seoDescription: 'I attended the Global Slow Medicine Conference in Warsaw: mindful development of an aesthetic medicine practice, quality of care and patient experience.'
 description: 'I attended the Global Slow Medicine Conference in Warsaw, which focused on the mindful development of an aesthetic medicine practice, quality of care and the patient experience.'
 date: 2026-10-10
 type: 'Conference'

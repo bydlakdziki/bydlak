@@ -1,5 +1,6 @@
 ---
 title: 'Medonet interview: working as a dentist in the United Kingdom'
+seoTitle: 'Medonet interview: dentist in the UK'
 description: 'A conversation for Medonet.pl about my career, studying orthodontics in Vienna and working as a dentist in the UK.'
 date: 2026-09-02
 type: 'In the media'
