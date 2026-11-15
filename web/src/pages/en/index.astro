@@ -32,39 +32,54 @@ const sections = [
 <Base title="dr Marta Kryczka – aesthetic medicine, Wrocław" description="Dentist combining aesthetic medicine and orthodontics (Invisalign). Education for physicians: biostimulation, fillers, botulinum toxin, laser therapy.">
   <section class="hero">
     <div class="container">
-      <div>
+      <div class="hero-text">
         <p class="eyebrow">Dentist · Aesthetic medicine · Wrocław</p>
         <h1>Aesthetic medicine and orthodontics with facial harmony in mind</h1>
         <p class="lead">
           Knowledge, a responsible approach to procedures, and education for physicians and anyone interested in smile aesthetics.
         </p>
-        <p><strong>Book a visit — choose a location:</strong></p>
-        <BookingLinks lang="en" />
         <div class="actions">
+          <a class="btn" href="#umow-wizyte">Book a visit</a>
           <a class="btn ghost" href="/en/training/">Training for physicians</a>
-          <a class="btn ghost" href="/en/about/">Read my story</a>
+          <a class="text-link" href="/en/about/">Read my story →</a>
         </div>
       </div>
-      <img class="portrait" src="/img/dr-marta-kryczka-portret.webp" alt="Dr Marta Kryczka, dentist, with a cup of coffee" width="1200" height="1500" fetchpriority="high" />
+      <div class="hero-photo">
+        <img class="portrait" src="/img/dr-marta-kryczka-portret.webp" alt="Dr Marta Kryczka, dentist, with a cup of coffee" width="1200" height="1500" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-band">
+    <div class="container">
+      <BookingLinks lang="en" variant="panel" />
     </div>
   </section>
 
   <section class="section vision">
     <div class="container">
-      <p class="eyebrow">My vision</p>
-      <h2>Beauty that begins with safety</h2>
-      <p class="vision-lead">{nb('I look at the patient as a whole: I combine an orthodontic view of the facial bone structures with care for soft-tissue regeneration, because facial harmony depends on both.')}</p>
-      <div class="vision-grid">
-        <div class="card">
-          <h3>{nb('Safety first')}</h3>
-          <p>{nb('I know how important a sense of safety is, because I was an oncology patient myself. I have experience planning treatment for people after cancer and with autoimmune conditions.')}</p>
+      <div class="vision-text">
+        <p class="eyebrow">My vision</p>
+        <h2>Beauty that begins with safety</h2>
+        <p class="vision-lead">{nb('I look at the patient as a whole: I combine an orthodontic view of the facial bone structures with care for soft-tissue regeneration, because facial harmony depends on both.')}</p>
+        <p><a class="btn" href="/en/contact/">Write to me</a></p>
+      </div>
+      <div class="vision-points">
+        <div class="vision-point">
+          <span class="point-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.3-7 10-4-1.7-7-5.4-7-10V6l7-3z" /><path d="M9 12l2 2 4-4" /></svg></span>
+          <div>
+            <h3>{nb('Safety first')}</h3>
+            <p>{nb('I know how important a sense of safety is, because I was an oncology patient myself. I have experience planning treatment for people after cancer and with autoimmune conditions.')}</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>{nb('I especially welcome')}</h3>
-          <p>{nb('People after radiotherapy and chemotherapy who want to look after their appearance in a considered and safe way. Every plan is individual, made after a conversation and qualification, and its scope is determined by your health.')}</p>
+        <div class="vision-point">
+          <span class="point-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg></span>
+          <div>
+            <h3>{nb('I especially welcome')}</h3>
+            <p>{nb('People after radiotherapy and chemotherapy who want to look after their appearance in a considered and safe way. Every plan is individual, made after a conversation and qualification, and its scope is determined by your health.')}</p>
+          </div>
         </div>
       </div>
-      <p><a class="btn" href="/en/contact/">Write to me</a></p>
     </div>
   </section>
 
