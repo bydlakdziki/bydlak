@@ -32,39 +32,54 @@ const sections = [
 <Base title="dr Marta Kryczka – medycyna estetyczna i ortodoncja, Wrocław" description="Lekarz dentysta łączący medycynę estetyczną i ortodoncję (Invisalign). Edukacja dla lekarzy: biostymulacja, wypełniacze, toksyna botulinowa, laseroterapia.">
   <section class="hero">
     <div class="container">
-      <div>
+      <div class="hero-text">
         <p class="eyebrow">Lekarz dentysta · Medycyna estetyczna · Wrocław</p>
         <h1>Medycyna estetyczna i ortodoncja z myślą o harmonii twarzy</h1>
         <p class="lead">
           Wiedza, odpowiedzialne podejście do zabiegów i edukacja dla lekarzy oraz osób zainteresowanych estetyką uśmiechu.
         </p>
-        <p><strong>Umów wizytę — wybierz miejsce:</strong></p>
-        <BookingLinks lang="pl" />
         <div class="actions">
+          <a class="btn" href="#umow-wizyte">Umów wizytę</a>
           <a class="btn ghost" href="/szkolenia/">Szkolenia dla lekarzy</a>
-          <a class="btn ghost" href="/o-mnie/">Poznaj moją historię</a>
+          <a class="text-link" href="/o-mnie/">Poznaj moją historię →</a>
         </div>
       </div>
-      <img class="portrait" src="/img/dr-marta-kryczka-portret.webp" alt="Dr Marta Kryczka, lekarz dentysta, z filiżanką kawy" width="1200" height="1500" fetchpriority="high" />
+      <div class="hero-photo">
+        <img class="portrait" src="/img/dr-marta-kryczka-portret.webp" alt="Dr Marta Kryczka, lekarz dentysta, z filiżanką kawy" width="1200" height="1500" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-band">
+    <div class="container">
+      <BookingLinks lang="pl" variant="panel" />
     </div>
   </section>
 
   <section class="section vision">
     <div class="container">
-      <p class="eyebrow">Moja wizja</p>
-      <h2>Piękno, które zaczyna się od bezpieczeństwa</h2>
-      <p class="vision-lead">{nb('Patrzę na pacjenta całościowo: łączę ortodontyczne spojrzenie na struktury kostne twarzy z troską o regenerację tkanek miękkich, bo harmonia twarzy zależy od jednego i drugiego.')}</p>
-      <div class="vision-grid">
-        <div class="card">
-          <h3>{nb('Bezpieczeństwo przede wszystkim')}</h3>
-          <p>{nb('Wiem, jak ważne jest poczucie bezpieczeństwa, ponieważ sama byłam pacjentką onkologiczną. Mam doświadczenie w planowaniu leczenia dla osób po chorobach nowotworowych i z zespołami autoimmunologicznymi.')}</p>
+      <div class="vision-text">
+        <p class="eyebrow">Moja wizja</p>
+        <h2>Piękno, które zaczyna się od bezpieczeństwa</h2>
+        <p class="vision-lead">{nb('Patrzę na pacjenta całościowo: łączę ortodontyczne spojrzenie na struktury kostne twarzy z troską o regenerację tkanek miękkich, bo harmonia twarzy zależy od jednego i drugiego.')}</p>
+        <p><a class="btn" href="/kontakt/">Napisz do mnie</a></p>
+      </div>
+      <div class="vision-points">
+        <div class="vision-point">
+          <span class="point-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.3-7 10-4-1.7-7-5.4-7-10V6l7-3z" /><path d="M9 12l2 2 4-4" /></svg></span>
+          <div>
+            <h3>{nb('Bezpieczeństwo przede wszystkim')}</h3>
+            <p>{nb('Wiem, jak ważne jest poczucie bezpieczeństwa, ponieważ sama byłam pacjentką onkologiczną. Mam doświadczenie w planowaniu leczenia dla osób po chorobach nowotworowych i z zespołami autoimmunologicznymi.')}</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>{nb('Zapraszam szczególnie')}</h3>
-          <p>{nb('Osoby po radioterapii i chemioterapii, które chcą zadbać o swój wygląd w sposób przemyślany i bezpieczny. Każdy plan powstaje indywidualnie, po rozmowie i kwalifikacji, a o jego zakresie decyduje stan zdrowia.')}</p>
+        <div class="vision-point">
+          <span class="point-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg></span>
+          <div>
+            <h3>{nb('Zapraszam szczególnie')}</h3>
+            <p>{nb('Osoby po radioterapii i chemioterapii, które chcą zadbać o swój wygląd w sposób przemyślany i bezpieczny. Każdy plan powstaje indywidualnie, po rozmowie i kwalifikacji, a o jego zakresie decyduje stan zdrowia.')}</p>
+          </div>
         </div>
       </div>
-      <p><a class="btn" href="/kontakt/">Napisz do mnie</a></p>
     </div>
   </section>
 
